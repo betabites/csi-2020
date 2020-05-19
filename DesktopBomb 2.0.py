@@ -3,6 +3,8 @@ import time
 import random
 import string
 
+#HI!
+
 path = os.path.join(os.environ["HOMEPATH"], "Desktop")
 
 if os.path.isfile("{}/files created.txt".format(path)):
