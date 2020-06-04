@@ -49,4 +49,14 @@ class frame {
         $query->close();
         return $result;
     }
+
+    function save_teacher($data) {
+        $image = '';
+        var_dump($data);
+        $query = $this->mysqli->prepare("UPDATE `teachers` SET `teacher_cypher`= ?,`teacher_surname`= ?,`teacher_christan`= ?, `yob`= ?,`started`= ?,`image`= ? WHERE `teacher_cypher` = ?");
+        $query->bind_param("sssiiss", $data['cypher'], $data['teacher_surname'], $data['teacher_christan'], $data['yob'],$data['started'],$image,$data['old_cypher']);
+        $result = $query->execute();
+        $query->close();
+        return $result;
+    }
 }

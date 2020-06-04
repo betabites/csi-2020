@@ -2,6 +2,10 @@
 //Get the frame
 require('assets/private/php/frame.php');
 $frame = new frame();
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $frame->save_teacher($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,8 @@ $frame = new frame();
 
         #profileImage {
             border: solid;
-            height: 250px;
+            width: 100%;
+            min-height: 50px;
         }
 
         h1 > input {
@@ -43,7 +48,7 @@ $frame = new frame();
         }
 
         .small_input {
-            width: 50px;
+            width: 75px;
         }
 
         button {
@@ -62,6 +67,7 @@ $frame = new frame();
             font-weight: bold;
             border-radius: 3px;
             display: block;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -69,25 +75,34 @@ $frame = new frame();
 <div class="banner">
     <div class="content"><h1>Teacher Board</h1></div>
     <script>
-        function imageUpload() {
-            let formData = new FormData();
-                let content =
+        function imageUpdate() {
+            let input = document.getElementById('image_input');
+            let files = input.files
+
+            if (FileReader && files.length) {
+                let fr = new FileReader()
+                fr.onload = function() {
+                    document.getElementById('profileImage').src = fr.result;
+                }
+                fr.readAsDataURL(files[0])
             }
+        }
     </script>
 </div>
 <div id="contentWrapper">
     <div id="content">
         <form method="POST">
         <div id="profileImageBox">
-            <div id="profileImage"></div>
+            <img id="profileImage"></img>
             <label for="image_input" id="image_upload_label" type="button">Upload Image</label>
-            <input type="file" accept="image/*" style="display: none" id="image_input" />
+            <input type="file" onchange="imageUpdate()" accept="image/jpeg" style="display: none" id="image_input" />
         </div>
         <div>
             <?php
             $teacher = $frame->get_teacher($_GET['cypher']);
-            echo "<h1><input type='text' placeholder='surname' value='".$teacher['teacher_surname']."' />, <input type='text' placeholder='first_name' value='".$teacher['teacher_christan']."' /> (".$_GET['cypher'].")</h1>";
-            echo "Born: <input type='number' class='small_input' min='1900' max='2100' name='yob' value='".$teacher['yob']."' /> - Started: <input type='number' class='small_input' min='1900' max='2100' name='started' value='".$teacher['started']."' />";
+            echo "<input type='text' value='".$_GET['cypher']."' style='display:none' name='cypher' /><input type='text' value='".$_GET['cypher']."' style='display:none' name='old_cypher' />";
+            echo "<h1><input type='text' placeholder='Surname' value='".$teacher['teacher_surname']."' name='teacher_surname'/>, <input type='text' placeholder='Fits Name' value='".$teacher['teacher_christan']."' name='teacher_christan'/> (".$_GET['cypher'].")</h1>";
+            echo "Born: <input type='number' class='small_input' min='1900' max='2100' name='yob' value='".$teacher['yob']."' name='yob'/> - Started: <input type='number' class='small_input' min='1900' max='2100' name='started' value='".$teacher['started']."' />";
             ?><br><br>
             <button style="background-color: blue;color:white;border-color: blue;">Save</button><button>Save & Exit</button><button>Cancel</button></div>
         </form>
