@@ -53,7 +53,6 @@ $frame = new frame();
                         echo "<li><a href='staffView.php?cypher=".$teacher['teacher_cypher']."'>".$teacher['teacher_cypher']." - ".$teacher['teacher_surname'].", ".$teacher['teacher_christan']."</a></li>";
                     }
                     ?>
-                    <li>Test Teacher</li>
                 </ul>
             </div>
         </div>

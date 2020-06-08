@@ -5,6 +5,7 @@ $frame = new frame();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $frame->save_teacher($_POST);
+    $frame->print_message();
 }
 ?>
 
@@ -87,24 +88,31 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 fr.readAsDataURL(files[0])
             }
         }
+
+        function cancel() {
+            window.location = window.location.href.replace("staffView.php", "")
+        }
     </script>
 </div>
 <div id="contentWrapper">
     <div id="content">
-        <form method="POST">
-        <div id="profileImageBox">
-            <img id="profileImage"></img>
-            <label for="image_input" id="image_upload_label" type="button">Upload Image</label>
-            <input type="file" onchange="imageUpdate()" accept="image/jpeg" style="display: none" id="image_input" />
-        </div>
-        <div>
+        <form method="POST" enctype="multipart/form-data">
             <?php
             $teacher = $frame->get_teacher($_GET['cypher']);
-            echo "<input type='text' value='".$_GET['cypher']."' style='display:none' name='cypher' /><input type='text' value='".$_GET['cypher']."' style='display:none' name='old_cypher' />";
-            echo "<h1><input type='text' placeholder='Surname' value='".$teacher['teacher_surname']."' name='teacher_surname'/>, <input type='text' placeholder='Fits Name' value='".$teacher['teacher_christan']."' name='teacher_christan'/> (".$_GET['cypher'].")</h1>";
-            echo "Born: <input type='number' class='small_input' min='1900' max='2100' name='yob' value='".$teacher['yob']."' name='yob'/> - Started: <input type='number' class='small_input' min='1900' max='2100' name='started' value='".$teacher['started']."' />";
-            ?><br><br>
-            <button style="background-color: blue;color:white;border-color: blue;">Save</button><button>Save & Exit</button><button>Cancel</button></div>
+            ?>
+            <div id="profileImageBox">
+                <img id="profileImage" src="assets/public/uploads/images/<?php echo $teacher['image']; ?>"/>
+                <label for="image_input" id="image_upload_label" type="button">Upload Image</label>
+                <input type="file" onchange="imageUpdate()" accept="image/jpeg" style="display: none" id="image_input" name="profile_pic"/>
+            </div>
+            <div>
+                <?php
+                echo "<input type='text' value='".$_GET['cypher']."' style='display:none' name='cypher' /><input type='text' value='".$_GET['cypher']."' style='display:none' name='old_cypher' />";
+                echo "<h1><input type='text' placeholder='Surname' value='".$teacher['teacher_surname']."' name='teacher_surname'/>, <input type='text' placeholder='Fits Name' value='".$teacher['teacher_christan']."' name='teacher_christan'/> (".$_GET['cypher'].")</h1>";
+                echo "Born: <input type='number' class='small_input' min='1900' max='2100' name='yob' value='".$teacher['yob']."' name='yob'/> - Started: <input type='number' class='small_input' min='1900' max='2100' name='started' value='".$teacher['started']."' />";
+                ?><br><br>
+                <button style="background-color: blue;color:white;border-color: blue;">Save</button><button type="button" onclick="cancel()">Cancel</button>
+            </div>
         </form>
     </div>
 </div>

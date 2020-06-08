@@ -52,3 +52,35 @@ body {
 select {
     width: 100px;
 }
+
+@keyframes message_disappear {
+    0% {
+        margin-top: 0;
+    }
+
+    90% {
+        margin-top: 0;
+    }
+
+    100% {
+        margin-top: -58px;
+    }
+}
+
+#error {
+    background-color: orangered;
+    padding: 10px;
+    border: ridge red 10px;
+    font-weight: bold;
+    animation: message_disappear 10s;
+    margin-top: -58px;
+}
+
+#info {
+    background-color: lightblue;
+    padding: 10px;
+    border: ridge blue 10px;
+    font-weight: bold;
+    animation: message_disappear 10s;
+    margin-top: -58px;
+}
