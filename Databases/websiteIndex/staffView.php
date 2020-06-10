@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </style>
 </head>
 <body>
-<div class="banner">
+<div class="banner" id="title">
     <div class="content"><h1>Teacher Board</h1></div>
     <script>
         function imageUpdate() {
@@ -110,7 +110,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 echo "<input type='text' value='".$_GET['cypher']."' style='display:none' name='cypher' /><input type='text' value='".$_GET['cypher']."' style='display:none' name='old_cypher' />";
                 echo "<h1><input type='text' placeholder='Surname' value='".$teacher['teacher_surname']."' name='teacher_surname'/>, <input type='text' placeholder='Fits Name' value='".$teacher['teacher_christan']."' name='teacher_christan'/> (".$_GET['cypher'].")</h1>";
                 echo "Born: <input type='number' class='small_input' min='1900' max='2100' name='yob' value='".$teacher['yob']."' name='yob'/> - Started: <input type='number' class='small_input' min='1900' max='2100' name='started' value='".$teacher['started']."' />";
-                ?><br><br>
+                ?> - Room: <select name="room_id">
+                    <?php
+                    foreach ($frame->get_rooms() as $room) {
+                        if ($teacher["room"] == $room["room_id"]) {
+                            //This is the teacher's current room
+                            echo "<option value='".$room["room_id"]."' selected>".$room["name"]."</option>";
+                        } else {
+                            //This is not the teacher's current room
+                            echo "<option value='".$room["room_id"]."'>".$room["name"]."</option>";
+                        }
+                    }
+                    ?>
+                </select><br><br>
+
                 <button style="background-color: blue;color:white;border-color: blue;">Save</button><button type="button" onclick="cancel()">Cancel</button>
             </div>
         </form>

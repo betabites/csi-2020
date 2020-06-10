@@ -12,14 +12,14 @@ $frame = new frame();
         <link rel="stylesheet" href="assets/public/css/styles.css">
     </head>
     <body>
-        <div class="banner">
+        <div class="banner" id="title">
             <div class="content"><h1>Teacher Board</h1></div>
         </div>
         <div id="contentWrapper">
             <div id="content">
                 Logged teachers:
                 <form method="GET">
-                    Sort By:
+                    <strong>Sort By:</strong>
                     <select name="sort_field">
                         <?php if (isset($_GET['sort_field'])) {?>
                             <option <?php if ($_GET['sort_field'] == "Cypher") echo "selected"; ?>>Cypher</option>
@@ -43,8 +43,18 @@ $frame = new frame();
                             <option selected>Ascending</option>
                             <option>Descending</option>
                         <?php } ?>
+                    </select><br>
+                    <strong>Find Criteria: </strong>
+                    <input type="text" placeholder="Cypher" name="find_cypher" value="<?php if (isset ($_GET['find_cypher'])) echo $_GET["find_cypher"];?>">
+                    <input type="text" placeholder="Last Name" name="find_lname" value="<?php if (isset ($_GET['find_cypher'])) echo $_GET["find_lname"];?>">
+                    <input type="text" placeholder="First Name" name="find_fname" value="<?php if (isset ($_GET['find_cypher'])) echo $_GET["find_fname"];?>">
+                    <select name="find_room">
+                        <option value="" selected>Any room</option>
+                        <?php foreach($frame->get_rooms() as $room) {
+                            echo "<option value='".$room["room_id"]."'>".$room["name"]."</option>";
+                        }?>
                     </select>
-                    <button>Sort</button>
+                    <button>Search & Sort</button>
                 </form>
                 <ul class="list1">
                     <?php
