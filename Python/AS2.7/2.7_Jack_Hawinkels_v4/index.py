@@ -127,13 +127,17 @@ def generate():
 
     result_window = tk.Tk()
     if empty == False:
-        width = len(max(text_lines))
+        result_window.title("Generated Text")
+
+        width = len(max(text_lines, key=len))
+        print(max(text_lines))
+        print(text_lines)
         # The following calculation calcualtes the exact number of stars that need to be printed so that these fit on one line
         text_lines.insert(0, ("*" * round((width - 13) / 2)) + " WAIKATO AIR " + ("*" * round((width - 13) / 2)))
         text_lines.insert(1, ("*" * round((width - 41) / 2)) + " These saver fares are for tommorow only " + ("*" * round((width - 41) / 2)))
 
         tk.Label(result_window, text="Highlight & copy the text bellow").grid(row=1, column=1)
-        results_output = tk.Text(result_window, width=width, borderwidth=0)
+        results_output = tk.Text(result_window, width=width+2, borderwidth=0)
         results_output.insert(tk.END, "\n".join(text_lines))
         results_output.grid(row=2, column=1)
     else:
