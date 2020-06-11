@@ -55,7 +55,7 @@ class Validation:
     def percent(self, action, value_if_allowed, prior_value, text, validation_type, trigger_type, widget_name):
         try:
             percent = float(value_if_allowed)
-            if percent > 100 or percent < 0 or len(value_if_allowed.split(" ")) > 1:
+            if percent >= 100 or percent < 0 or len(value_if_allowed.split(" ")) > 1:
                 return False
             else:
                 return True
@@ -100,7 +100,6 @@ def main_window():
 
 # This definition generates the output text and shows it in a window where it can be copied
 def generate():
-    text = "******************** WAIKATO AIR *********************\n******* These saver fares are for tommorow only ******"
     text_lines = []
     empty = False
     for i in range(len(locations)):
