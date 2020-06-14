@@ -7,6 +7,7 @@
 # ***IMPORTS***
 import tkinter as tk
 import json
+import copy
 
 # ---IMPORTS---
 
@@ -19,6 +20,25 @@ new_location_dialog_input = ""
 
 
 # ---GLOBALS---
+
+#Constant for default locations
+loc_default = [
+  {
+    "name": "Auckland",
+    "discounted_price": 0,
+    "discount": 0
+  },
+  {
+    "name": "Wellington",
+    "discounted_price": 0,
+    "discount": 0
+  },
+  {
+    "name": "Rotorua",
+    "discounted_price": 0,
+    "discount": 0
+  }
+]
 
 # ***CLASSES***
 
@@ -93,7 +113,8 @@ def main_window():
     tk.Label(master, text="- -").grid(row=len(locations) + 3, column=1, columnspan=3)
 
     tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1, columnspan=3)
-    tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=3)
+    tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=2)
+    tk.Button(text="Restore Default", command=default_all).grid(row=len(locations) + 6, column=3)
 
     master.mainloop()
 
@@ -229,6 +250,31 @@ def generate_delete_button(id):
         master = tk.Tk()
         main_window()
     return temp_delete
+
+
+#function to default all locations
+def default_all():
+    global master
+    global locations
+    global loc_default
+    master.destroy()
+
+    locations = []
+    locations = copy.deepcopy(loc_default)
+
+    #Save to file
+    locations_temp = locations
+    for location in locations_temp:
+        location["discounted_price"] = 0
+        location["discount"] = 0
+
+    with open('assets/json/locations.json', 'w') as json_file:
+        json.dump(locations_temp, json_file)
+
+    #Re-open the main window
+    master = tk.Tk()
+    main_window()
+
 
 
 # ---DEFINITIONS---
