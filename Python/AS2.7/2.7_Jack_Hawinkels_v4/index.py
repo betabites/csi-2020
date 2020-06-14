@@ -97,25 +97,33 @@ def main_window():
     val_currency = (master.register(Validation.currency), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
     val_percent = (master.register(Validation.percent), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
 
-    tk.Label(master, text="Please enter the discounted prices below").grid(row=1, column=1, columnspan=2)
-    tk.Label(master, text="Discounted Price ($)").grid(row=2, column=2)
-    tk.Label(master, text="Discount percentage (amount taken off)(%)").grid(row=2, column=3)
-    for i in range(len(locations)):
-        tk.Label(master, text=locations[i]["name"]).grid(column=1, row=i + 3)
-        locations[i]["discounted_price"] = tk.Entry(master, validate='key', validatecommand=val_currency)
-        locations[i]["discounted_price"].grid(column=2, row=i + 3)
+    if len(locations) == 0:
+        # Print this if there are no stored locations
+        tk.Label(master, text="There are no stored locations at the momment. To get started, add one or restore the defaults.").grid(row=1, column=1, columnspan=2)
+        tk.Button(text="Add location", command=new_location_dialog).grid(row=2, column=1)
+        tk.Button(text="Restore Default", command=default_all).grid(row=2, column=2)
+    else:
+        # There are stored locations, so print them.
+        tk.Label(master, text="Please enter the discounted prices below").grid(row=1, column=1, columnspan=2)
+        tk.Label(master, text="Discounted Price ($)").grid(row=2, column=2)
+        tk.Label(master, text="Discount percentage (amount taken off)(%)").grid(row=2, column=3)
 
-        locations[i]["discount"] = tk.Entry(master, validate='key', validatecommand=val_percent)
-        locations[i]["discount"].grid(column=3, row=i + 3)
+        for i in range(len(locations)):
+            tk.Label(master, text=locations[i]["name"]).grid(column=1, row=i + 3)
+            locations[i]["discounted_price"] = tk.Entry(master, validate='key', validatecommand=val_currency)
+            locations[i]["discounted_price"].grid(column=2, row=i + 3)
 
-        tk.Button(master, text="delete", command=generate_delete_button(i)).grid(column=4, row=i + 3)
+            locations[i]["discount"] = tk.Entry(master, validate='key', validatecommand=val_percent)
+            locations[i]["discount"].grid(column=3, row=i + 3)
 
-    tk.Label(master, text="- -").grid(row=len(locations) + 3, column=1, columnspan=3)
+            tk.Button(master, text="delete", command=generate_delete_button(i)).grid(column=4, row=i + 3)
 
-    tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1,
-                                                                               columnspan=3)
-    tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=2)
-    tk.Button(text="Restore Default", command=default_all).grid(row=len(locations) + 6, column=3)
+        tk.Label(master, text="- -").grid(row=len(locations) + 3, column=1, columnspan=3)
+
+        tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1,
+                                                                                   columnspan=3)
+        tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=2)
+        tk.Button(text="Restore Default", command=default_all).grid(row=len(locations) + 6, column=3)
 
     master.mainloop()
 
