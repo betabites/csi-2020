@@ -18,27 +18,27 @@ with open('assets/json/locations.json') as f:
 master = tk.Tk()
 new_location_dialog_input = ""
 
-
 # ---GLOBALS---
 
-#Constant for default locations
+# Constant for default locations
 loc_default = [
-  {
-    "name": "Auckland",
-    "discounted_price": 0,
-    "discount": 0
-  },
-  {
-    "name": "Wellington",
-    "discounted_price": 0,
-    "discount": 0
-  },
-  {
-    "name": "Rotorua",
-    "discounted_price": 0,
-    "discount": 0
-  }
+    {
+        "name": "Auckland",
+        "discounted_price": 0,
+        "discount": 0
+    },
+    {
+        "name": "Wellington",
+        "discounted_price": 0,
+        "discount": 0
+    },
+    {
+        "name": "Rotorua",
+        "discounted_price": 0,
+        "discount": 0
+    }
 ]
+
 
 # ***CLASSES***
 
@@ -112,7 +112,8 @@ def main_window():
 
     tk.Label(master, text="- -").grid(row=len(locations) + 3, column=1, columnspan=3)
 
-    tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1, columnspan=3)
+    tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1,
+                                                                               columnspan=3)
     tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=2)
     tk.Button(text="Restore Default", command=default_all).grid(row=len(locations) + 6, column=3)
 
@@ -155,10 +156,11 @@ def generate():
         print(text_lines)
         # The following calculation calcualtes the exact number of stars that need to be printed so that these fit on one line
         text_lines.insert(0, ("*" * round((width - 13) / 2)) + " WAIKATO AIR " + ("*" * round((width - 13) / 2)))
-        text_lines.insert(1, ("*" * round((width - 41) / 2)) + " These saver fares are for tomorrow only " + ("*" * round((width - 41) / 2)))
+        text_lines.insert(1, ("*" * round((width - 41) / 2)) + " These saver fares are for tomorrow only " + (
+                    "*" * round((width - 41) / 2)))
 
         tk.Label(result_window, text="Highlight & copy the text bellow").grid(row=1, column=1)
-        results_output = tk.Text(result_window, width=width+2, borderwidth=0)
+        results_output = tk.Text(result_window, width=width + 2, borderwidth=0)
         results_output.insert(tk.END, "\n".join(text_lines))
         results_output.grid(row=2, column=1)
     else:
@@ -168,7 +170,6 @@ def generate():
     # results_output.configure(state="disabled")
 
     # results_output.configure(inactiveselectbackground=w.cget("selectbackground"))
-
 
 
 # This definiton shows a window that allows the user to add new locations
@@ -187,33 +188,35 @@ def new_location_dialog():
     tk.Button(master, text="Cancel", command=cancel_new_location).grid(row=3, column=1)
     tk.Button(master, text="Add", command=new_location).grid(row=3, column=2)
 
+
 # This definiton grabs information from the window opened by new_location_dialog() and saves it
-def new_location():
-    global master
-    global new_location_dialog_input
+class new_location:
+    def __init__(self):
+        global master
+        global new_location_dialog_input
 
-    if new_location_dialog_input.get() != "":
-        # Add the new location to the list, and save it
-        locations.append({
-            "name": new_location_dialog_input.get(),
-            "discounted_price": 0,
-            "discount": 0
-        })
+        if new_location_dialog_input.get() != "":
+            # Add the new location to the list, and save it
+            locations.append({
+                "name": new_location_dialog_input.get(),
+                "discounted_price": 0,
+                "discount": 0
+            })
 
-        locations_temp = locations
-        for location in locations_temp:
-            location["discounted_price"] = 0
-            location["discount"] = 0
+            locations_temp = locations
+            for location in locations_temp:
+                location["discounted_price"] = 0
+                location["discount"] = 0
 
-        with open('assets/json/locations.json', 'w') as json_file:
-            json.dump(locations_temp, json_file)
+            with open('assets/json/locations.json', 'w') as json_file:
+                json.dump(locations_temp, json_file)
 
-        # Close the master window
-        master.destroy()
+            # Close the master window
+            master.destroy()
 
-        # Reopen the master window
-        master = tk.Tk()
-        main_window()
+            # Reopen the master window
+            master = tk.Tk()
+            main_window()
 
 
 # This definition allows the user to cancel out of creating a new location if they wish
@@ -249,10 +252,11 @@ def generate_delete_button(id):
         master.destroy()
         master = tk.Tk()
         main_window()
+
     return temp_delete
 
 
-#function to default all locations
+# function to default all locations
 def default_all():
     global master
     global locations
@@ -262,7 +266,7 @@ def default_all():
     locations = []
     locations = copy.deepcopy(loc_default)
 
-    #Save to file
+    # Save to file
     locations_temp = locations
     for location in locations_temp:
         location["discounted_price"] = 0
@@ -271,10 +275,9 @@ def default_all():
     with open('assets/json/locations.json', 'w') as json_file:
         json.dump(locations_temp, json_file)
 
-    #Re-open the main window
+    # Re-open the main window
     master = tk.Tk()
     main_window()
-
 
 
 # ---DEFINITIONS---
