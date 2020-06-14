@@ -196,27 +196,54 @@ class new_location:
         global new_location_dialog_input
 
         if new_location_dialog_input.get() != "":
-            # Add the new location to the list, and save it
-            locations.append({
-                "name": new_location_dialog_input.get(),
-                "discounted_price": 0,
-                "discount": 0
-            })
+            self.new_location_name = new_location_dialog_input.get()
+            if self.new_location_name != self.new_location_name.title():
+                self.verify_input()
+            else:
+                # Input is already titlecase
+                self.save_input()
 
-            locations_temp = locations
-            for location in locations_temp:
-                location["discounted_price"] = 0
-                location["discount"] = 0
+                # Close the master window
+                master.destroy()
 
-            with open('assets/json/locations.json', 'w') as json_file:
-                json.dump(locations_temp, json_file)
+                # Reopen the master window
+                master = tk.Tk()
+                main_window()
 
-            # Close the master window
-            master.destroy()
+    def verify_input(self):
+        self.verify_window = tk.Tk()
+        self.verify_window.title("Please verify")
+        tk.Label(self.verify_window, text=self.new_location_name+"\n\nAre you sure that this is correct?").grid(row=1,column=1,columnspan=2)
+        tk.Button(self.verify_window, text="No", command=self.verify_deny).grid(row=2, column=1)
+        tk.Button(self.verify_window, text="Yes", command=self.verify_accept).grid(row=2, column=2)
+    
+    def verify_accept(self):
+        global master
 
-            # Reopen the master window
-            master = tk.Tk()
-            main_window()
+        self.verify_window.destroy()
+        self.save_input()
+        master.destroy()
+        master = tk.Tk()
+        main_window()
+
+    def verify_deny(self):
+        self.verify_window.destroy()
+
+    def save_input(self):
+        # Add the new location to the list, and save it
+        locations.append({
+            "name": self.new_location_name,
+            "discounted_price": 0,
+            "discount": 0
+        })
+
+        locations_temp = locations
+        for location in locations_temp:
+            location["discounted_price"] = 0
+            location["discount"] = 0
+
+        with open('assets/json/locations.json', 'w') as json_file:
+            json.dump(locations_temp, json_file)
 
 
 # This definition allows the user to cancel out of creating a new location if they wish
