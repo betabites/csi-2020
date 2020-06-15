@@ -173,7 +173,7 @@ def generate():
         results_output.grid(row=2, column=1)
     else:
         result_window.title("Error")
-        tk.Label(result_window, text="Please fill in all fields before generating text.").pack()
+        tk.Label(result_window, text="Please fill in all fields before generating text.\n\nIf you need to exclude a certain location from the deals list, please click the 'delete' button next to it.").pack()
 
     # results_output.configure(state="disabled")
 
