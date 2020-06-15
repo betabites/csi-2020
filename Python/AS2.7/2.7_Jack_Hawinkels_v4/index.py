@@ -18,27 +18,8 @@ with open('assets/json/locations.json') as f:
 master = tk.Tk()
 new_location_dialog_input = ""
 
+
 # ---GLOBALS---
-
-# Constant for default locations
-loc_default = [
-    {
-        "name": "Auckland",
-        "discounted_price": 0,
-        "discount": 0
-    },
-    {
-        "name": "Wellington",
-        "discounted_price": 0,
-        "discount": 0
-    },
-    {
-        "name": "Rotorua",
-        "discounted_price": 0,
-        "discount": 0
-    }
-]
-
 
 # ***CLASSES***
 
@@ -75,7 +56,7 @@ class Validation:
     def percent(self, action, value_if_allowed, prior_value, text, validation_type, trigger_type, widget_name):
         try:
             percent = float(value_if_allowed)
-            if percent >= 100 or percent < 0 or len(value_if_allowed.split(" ")) > 1:
+            if percent > 100 or percent < 0 or len(value_if_allowed.split(" ")) > 1:
                 return False
             else:
                 return True
@@ -116,11 +97,6 @@ def main_window():
     tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1, columnspan=6)
     tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=6)
 
-        tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1,
-                                                                                   columnspan=3)
-        tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=2)
-        tk.Button(text="Restore Default", command=default_all).grid(row=len(locations) + 6, column=3)
-
     master.mainloop()
 
 
@@ -158,11 +134,12 @@ def generate():
         results_output.grid(row=2, column=1)
     else:
         result_window.title("Error")
-        tk.Label(result_window, text="Please fill in all fields before generating text.\n\nIf you need to exclude a certain location from the deals list, please click the 'delete' button next to it.").pack()
+        tk.Label(result_window, text="Please fill in all fields before generating text.").pack()
 
     # results_output.configure(state="disabled")
 
     # results_output.configure(inactiveselectbackground=w.cget("selectbackground"))
+
 
 
 # This definiton shows a window that allows the user to add new locations
@@ -181,51 +158,15 @@ def new_location_dialog():
     tk.Button(master, text="Cancel", command=cancel_new_location).grid(row=3, column=1)
     tk.Button(master, text="Add", command=new_location).grid(row=3, column=2)
 
-
 # This definiton grabs information from the window opened by new_location_dialog() and saves it
-class new_location:
-    def __init__(self):
-        global master
-        global new_location_dialog_input
+def new_location():
+    global master
+    global new_location_dialog_input
 
-        if new_location_dialog_input.get() != "":
-            self.new_location_name = new_location_dialog_input.get()
-            if self.new_location_name != self.new_location_name.title():
-                self.verify_input()
-            else:
-                # Input is already titlecase
-                self.save_input()
-
-                # Close the master window
-                master.destroy()
-
-                # Reopen the master window
-                master = tk.Tk()
-                main_window()
-
-    def verify_input(self):
-        self.verify_window = tk.Tk()
-        self.verify_window.title("Please verify")
-        tk.Label(self.verify_window, text=self.new_location_name+"\n\nAre you sure that this is correct?").grid(row=1,column=1,columnspan=2)
-        tk.Button(self.verify_window, text="No", command=self.verify_deny).grid(row=2, column=1)
-        tk.Button(self.verify_window, text="Yes", command=self.verify_accept).grid(row=2, column=2)
-    
-    def verify_accept(self):
-        global master
-
-        self.verify_window.destroy()
-        self.save_input()
-        master.destroy()
-        master = tk.Tk()
-        main_window()
-
-    def verify_deny(self):
-        self.verify_window.destroy()
-
-    def save_input(self):
+    if new_location_dialog_input.get() != "":
         # Add the new location to the list, and save it
         locations.append({
-            "name": self.new_location_name,
+            "name": new_location_dialog_input.get(),
             "discounted_price": 0,
             "discount": 0
         })
@@ -237,6 +178,13 @@ class new_location:
 
         with open('assets/json/locations.json', 'w') as json_file:
             json.dump(locations_temp, json_file)
+
+        # Close the master window
+        master.destroy()
+
+        # Reopen the master window
+        master = tk.Tk()
+        main_window()
 
 
 # This definition allows the user to cancel out of creating a new location if they wish
@@ -272,7 +220,6 @@ def generate_delete_button(id):
         master.destroy()
         master = tk.Tk()
         main_window()
-
     return temp_delete
 
 def exit():
