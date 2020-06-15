@@ -2,12 +2,12 @@
 # Author: Jack Hawinkels
 # Created: 24/04/2020 10:44am
 # Modified: 30/04/2020
-# Version: 3
+# Version: 4
 
 # ***IMPORTS***
 import tkinter as tk
 import json
-import copy
+import random
 
 # ---IMPORTS---
 
@@ -97,28 +97,24 @@ def main_window():
     val_currency = (master.register(Validation.currency), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
     val_percent = (master.register(Validation.percent), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
 
-    if len(locations) == 0:
-        # Print this if there are no stored locations
-        tk.Label(master, text="There are no stored locations at the momment. To get started, add one or restore the defaults.").grid(row=1, column=1, columnspan=2)
-        tk.Button(text="Add location", command=new_location_dialog).grid(row=2, column=1)
-        tk.Button(text="Restore Default", command=default_all).grid(row=2, column=2)
-    else:
-        # There are stored locations, so print them.
-        tk.Label(master, text="Please enter the discounted prices below").grid(row=1, column=1, columnspan=2)
-        tk.Label(master, text="Discounted Price ($)").grid(row=2, column=2)
-        tk.Label(master, text="Discount percentage (amount taken off)(%)").grid(row=2, column=3)
+    tk.Label(master, text="Please enter the discounted prices below").grid(row=1, column=1, columnspan=5)
+    tk.Label(master, text="Discounted Price ($)").grid(row=2, column=3)
+    tk.Label(master, text="Discount % taken off").grid(row=2, column=5)
+    for i in range(len(locations)):
+        tk.Label(master, text=locations[i]["name"]).grid(column=1, row=i + 3)
+        tk.Label(master, text="$").grid(column=2, row=i + 3)
+        locations[i]["discounted_price"] = tk.Entry(master, validate='key', validatecommand=val_currency)
+        locations[i]["discounted_price"].grid(column=3, row=i + 3)
+        tk.Label(master, text="  %").grid(column=4, row=i + 3)
+        locations[i]["discount"] = tk.Entry(master, validate='key', validatecommand=val_percent)
+        locations[i]["discount"].grid(column=5, row=i + 3)
 
-        for i in range(len(locations)):
-            tk.Label(master, text=locations[i]["name"]).grid(column=1, row=i + 3)
-            locations[i]["discounted_price"] = tk.Entry(master, validate='key', validatecommand=val_currency)
-            locations[i]["discounted_price"].grid(column=2, row=i + 3)
+        tk.Button(master, text="delete", command=generate_delete_button(i)).grid(column=6, row=i + 3)
 
-            locations[i]["discount"] = tk.Entry(master, validate='key', validatecommand=val_percent)
-            locations[i]["discount"].grid(column=3, row=i + 3)
+    tk.Label(master, text="- -").grid(row=len(locations) + 3, column=1, columnspan=6)
 
-            tk.Button(master, text="delete", command=generate_delete_button(i)).grid(column=4, row=i + 3)
-
-        tk.Label(master, text="- -").grid(row=len(locations) + 3, column=1, columnspan=3)
+    tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1, columnspan=6)
+    tk.Button(text="Add location", command=new_location_dialog).grid(row=len(locations) + 6, column=1, columnspan=6)
 
         tk.Button(text="Generate text & save to clipboard", command=generate).grid(row=len(locations) + 5, column=1,
                                                                                    columnspan=3)
@@ -130,7 +126,7 @@ def main_window():
 
 # This definition generates the output text and shows it in a window where it can be copied
 def generate():
-    text_lines = []
+    text = "******************** WAIKATO AIR *********************\n******* These saver fares are for tommorow only ******"
     empty = False
     for i in range(len(locations)):
         # Generate cyphers
@@ -139,37 +135,26 @@ def generate():
             empty = True
             break
 
-        cypher = locations[i]["name"][0:3].upper()
+        cypher = locations[i]["name"][0:3].upper() + str(random.randint(100, 999))
         reduced_fare = format(float(locations[i]["discounted_price"].get()), '.2f')
         percentage = format(float(locations[i]["discount"].get()), '.2f')
         percentage_flt = float(locations[i]["discount"].get())
         original_fee = round((float(locations[i]["discounted_price"].get()) / (100 - percentage_flt)) * 10000) / 100
-        text_lines.append(cypher + " - " + locations[i][
-            "name"] + " - $" + reduced_fare + " - " + percentage + "% off original fee ($" + str(
-            original_fee) + ") - ")
-
+        text = text + "\n The fare for flight '" + cypher + "' to " + locations[i][
+            "name"] + " is $" + reduced_fare + " - " + percentage + "% off original fee ($" + str(
+            original_fee) + ") - "
         if percentage_flt <= 20:
-            text_lines[-1] = text_lines[-1] + "Quick Saver"
+            text = text + "Quick Saver"
         elif percentage_flt <= 50:
-            text_lines[-1] = text_lines[-1] + "Smart Saver"
+            text = text + "Smart Saver"
         else:
-            text_lines[-1] = text_lines[-1] + "Super Saver"
+            text = text + "Super Saver"
 
     result_window = tk.Tk()
     if empty == False:
-        result_window.title("Generated Text")
-
-        width = len(max(text_lines, key=len))
-        print(max(text_lines))
-        print(text_lines)
-        # The following calculation calcualtes the exact number of stars that need to be printed so that these fit on one line
-        text_lines.insert(0, ("*" * round((width - 13) / 2)) + " WAIKATO AIR " + ("*" * round((width - 13) / 2)))
-        text_lines.insert(1, ("*" * round((width - 41) / 2)) + " These saver fares are for tomorrow only " + (
-                    "*" * round((width - 41) / 2)))
-
         tk.Label(result_window, text="Highlight & copy the text bellow").grid(row=1, column=1)
-        results_output = tk.Text(result_window, width=width + 2, borderwidth=0)
-        results_output.insert(tk.END, "\n".join(text_lines))
+        results_output = tk.Text(result_window, height=len(locations) + 2, borderwidth=0)
+        results_output.insert(tk.END, text)
         results_output.grid(row=2, column=1)
     else:
         result_window.title("Error")
@@ -290,31 +275,9 @@ def generate_delete_button(id):
 
     return temp_delete
 
-
-# function to default all locations
-def default_all():
-    global master
-    global locations
-    global loc_default
+def exit():
+    # Allows user to use Cmd + Q on a mac to close the program.
     master.destroy()
-
-    locations = []
-    locations = copy.deepcopy(loc_default)
-
-    # Save to file
-    locations_temp = locations
-    for location in locations_temp:
-        location["discounted_price"] = 0
-        location["discount"] = 0
-
-    with open('assets/json/locations.json', 'w') as json_file:
-        json.dump(locations_temp, json_file)
-
-    # Re-open the main window
-    master = tk.Tk()
-    main_window()
-
-
 # ---DEFINITIONS---
 
 # ***Main Script***
