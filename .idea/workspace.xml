@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Added v5 file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/AS2.3_StoreDesign_2020.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/AS2.3_StoreDesign_2020.xlsx" afterDir="false" />
-    </list>
+    <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Added v5 file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +63,7 @@
       <updated>1592292316890</updated>
       <workItem from="1592292332798" duration="75000" />
       <workItem from="1592354774853" duration="595000" />
+      <workItem from="1592430179346" duration="411000" />
     </task>
     <servers />
   </component>
