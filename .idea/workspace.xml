@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Removed phone_nums table">
-      <change beforePath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/AS2.3_StoreDesign_2020.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/AS2.3_StoreDesign_2020.xlsx" afterDir="false" />
-    </list>
+    <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Added contacts and transactions table" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +63,7 @@
       <updated>1592292316890</updated>
       <workItem from="1592292332798" duration="75000" />
       <workItem from="1592354774853" duration="595000" />
-      <workItem from="1592430179346" duration="1195000" />
+      <workItem from="1592430179346" duration="1495000" />
     </task>
     <task id="LOCAL-00001" summary="Removed sizing table">
       <created>1592430634060</created>
@@ -81,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592430775722</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added contacts and transactions table">
+      <created>1592431489760</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592431489760</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,12 +107,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Removed sizing table" />
     <MESSAGE value="Removed phone_nums table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed phone_nums table" />
+    <MESSAGE value="Added contacts and transactions table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added contacts and transactions table" />
   </component>
   <component name="WindowStateProjectService">
     <state x="545" y="152" key="RollbackChangesDialog" timestamp="1592430716859">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="545" y="152" key="RollbackChangesDialog/0.0.1600.900@0.0.1600.900" timestamp="1592430716859" />
+    <state x="392" y="183" key="Vcs.Push.Dialog.v2" timestamp="1592431503029">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="392" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1592431503029" />
   </component>
 </project>
