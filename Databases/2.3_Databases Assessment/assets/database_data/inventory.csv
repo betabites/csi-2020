@@ -1,0 +1,2 @@
+﻿transaction_id,product_variation_id,transaction_type,cost,amount,contact_id,timestamp
+1,1,in,120,12,1,

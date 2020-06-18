@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Saved all tables as CSV files">
+      <change beforePath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/assets/database_data/product_variations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/assets/database_data/product_variations.csv" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Python-Dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dONjOx10PMrt4zrTUi9gm4OLsn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Python/temp.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\csi-2020\Databases\2.3_Databases Assessment\assets\database_data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\csi-2020\Python\AS2.7" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="csi-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Jackh\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/temp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Added v5 file" />
+      <created>1592292316890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592292316890</updated>
+      <workItem from="1592292332798" duration="75000" />
+      <workItem from="1592354774853" duration="595000" />
+      <workItem from="1592430179346" duration="3220000" />
+      <workItem from="1592435442413" duration="581000" />
+      <workItem from="1592514597684" duration="955000" />
+    </task>
+    <task id="LOCAL-00001" summary="Removed sizing table">
+      <created>1592430634060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592430634060</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Removed phone_nums table">
+      <created>1592430775722</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592430775722</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added contacts and transactions table">
+      <created>1592431489760</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592431489760</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Moved database files">
+      <created>1592431728881</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592431728881</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Saved all tables as CSV files">
+      <created>1592431923579</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592431923579</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Saved all tables as CSV files">
+      <created>1592432392634</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592432392634</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Minor Changes">
+      <created>1592514666742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592514666742</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removed sizing table" />
+    <MESSAGE value="Removed phone_nums table" />
+    <MESSAGE value="Added contacts and transactions table" />
+    <MESSAGE value="Moved database files" />
+    <MESSAGE value="Saved all tables as CSV files" />
+    <MESSAGE value="Minor Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="254" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592435605895">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="254" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.900@0.0.1600.900" timestamp="1592435605895" />
+    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1592435602697">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1592435602696" />
+    <state width="1540" height="235" key="GridCell.Tab.0.bottom" timestamp="1592436620430">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1592436620430" />
+    <state width="1540" height="235" key="GridCell.Tab.0.center" timestamp="1592436620429">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
+    <state width="1540" height="235" key="GridCell.Tab.0.left" timestamp="1592436620429">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
+    <state width="1540" height="235" key="GridCell.Tab.0.right" timestamp="1592436620429">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
+    <state x="152" y="72" key="MergeDialog" timestamp="1592515512360">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="152" y="72" key="MergeDialog/0.0.1600.900@0.0.1600.900" timestamp="1592515512360" />
+    <state x="438" y="211" key="MultipleFileMergeDialog" timestamp="1592515512367">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="438" y="211" key="MultipleFileMergeDialog/0.0.1600.900@0.0.1600.900" timestamp="1592515512367" />
+    <state x="545" y="152" key="RollbackChangesDialog" timestamp="1592430716859">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="545" y="152" key="RollbackChangesDialog/0.0.1600.900@0.0.1600.900" timestamp="1592430716859" />
+    <state x="392" y="183" key="Vcs.Push.Dialog.v2" timestamp="1592515564990">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="392" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1592515564990" />
+    <state x="380" y="105" key="editAsTableFormatDialogDimension" timestamp="1592433017628">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="380" y="105" key="editAsTableFormatDialogDimension/0.0.1600.900@0.0.1600.900" timestamp="1592433017628" />
+  </component>
+</project>
