@@ -1,4 +1,4 @@
-﻿variation_id,product_id,price,colour,size,img_location,gender,inventory
+variation_id,product_id,price,colour,size,img_location,gender,inventory
 1,1,39.00,,,yellowkidsbanner.jpg,,12
 2,2,39.00,,,boldbanner.jpg,,12
 3,3,39.00,,,coffeebanner.jpg,,12
