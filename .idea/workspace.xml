@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Saved all tables as CSV files">
+      <change afterPath="$PROJECT_DIR$/Python/temp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csi-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csi-2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/assets/database_data/product_variations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/assets/database_data/product_variations.csv" afterDir="false" />
     </list>
@@ -48,6 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Python/temp.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -56,6 +60,30 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\csi-2020\Python\AS2.7" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="csi-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Jackh\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/temp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,7 +97,8 @@
       <updated>1592292316890</updated>
       <workItem from="1592292332798" duration="75000" />
       <workItem from="1592354774853" duration="595000" />
-      <workItem from="1592430179346" duration="2179000" />
+      <workItem from="1592430179346" duration="3220000" />
+      <workItem from="1592435442413" duration="581000" />
     </task>
     <task id="LOCAL-00001" summary="Removed sizing table">
       <created>1592430634060</created>
@@ -106,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592431923579</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Saved all tables as CSV files">
+      <created>1592432392634</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592432392634</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +169,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="Saved all tables as CSV files" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="254" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592435605895">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="254" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.900@0.0.1600.900" timestamp="1592435605895" />
+    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1592435602697">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1592435602696" />
+    <state width="1540" height="235" key="GridCell.Tab.0.bottom" timestamp="1592436620430">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1592436620430" />
+    <state width="1540" height="235" key="GridCell.Tab.0.center" timestamp="1592436620429">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
+    <state width="1540" height="235" key="GridCell.Tab.0.left" timestamp="1592436620429">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
+    <state width="1540" height="235" key="GridCell.Tab.0.right" timestamp="1592436620429">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1540" height="235" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
     <state x="545" y="152" key="RollbackChangesDialog" timestamp="1592430716859">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
@@ -141,5 +201,9 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="392" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1592431929870" />
+    <state x="380" y="105" key="editAsTableFormatDialogDimension" timestamp="1592433017628">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="380" y="105" key="editAsTableFormatDialogDimension/0.0.1600.900@0.0.1600.900" timestamp="1592433017628" />
   </component>
 </project>
