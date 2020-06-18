@@ -20,10 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dd3e03e-760d-41aa-810a-ad0fe6847058" name="Default Changelist" comment="Saved all tables as CSV files">
-      <change afterPath="$PROJECT_DIR$/Python/temp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csi-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csi-2020.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/assets/database_data/product_variations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Databases/2.3_Databases Assessment/assets/database_data/product_variations.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +95,7 @@
       <workItem from="1592354774853" duration="595000" />
       <workItem from="1592430179346" duration="3220000" />
       <workItem from="1592435442413" duration="581000" />
+      <workItem from="1592514597684" duration="955000" />
     </task>
     <task id="LOCAL-00001" summary="Removed sizing table">
       <created>1592430634060</created>
@@ -142,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592432392634</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Minor Changes">
+      <created>1592514666742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592514666742</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +170,8 @@
     <MESSAGE value="Added contacts and transactions table" />
     <MESSAGE value="Moved database files" />
     <MESSAGE value="Saved all tables as CSV files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saved all tables as CSV files" />
+    <MESSAGE value="Minor Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592435605895">
@@ -193,14 +198,22 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state width="1540" height="235" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1592436620429" />
+    <state x="152" y="72" key="MergeDialog" timestamp="1592515512360">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="152" y="72" key="MergeDialog/0.0.1600.900@0.0.1600.900" timestamp="1592515512360" />
+    <state x="438" y="211" key="MultipleFileMergeDialog" timestamp="1592515512367">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="438" y="211" key="MultipleFileMergeDialog/0.0.1600.900@0.0.1600.900" timestamp="1592515512367" />
     <state x="545" y="152" key="RollbackChangesDialog" timestamp="1592430716859">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="545" y="152" key="RollbackChangesDialog/0.0.1600.900@0.0.1600.900" timestamp="1592430716859" />
-    <state x="392" y="183" key="Vcs.Push.Dialog.v2" timestamp="1592431929870">
+    <state x="392" y="183" key="Vcs.Push.Dialog.v2" timestamp="1592515564990">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="392" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1592431929870" />
+    <state x="392" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1592515564990" />
     <state x="380" y="105" key="editAsTableFormatDialogDimension" timestamp="1592433017628">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
