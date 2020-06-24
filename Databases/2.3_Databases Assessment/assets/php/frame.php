@@ -18,7 +18,25 @@ class frame {
 
     }
 
-    function get_all_products() {
-        return $this->mysqli->query("SELECT * FROM `designers`.`products` WHERE 1");
+    function get_all_products($get_variations = false) {
+        $data_in = $this->mysqli->query("SELECT * FROM `designers`.`products` WHERE 1");
+
+        // Process data into an array
+        $data = [];
+        foreach ($data_in as $row) {
+            array_push($data, $row);
+        }
+
+        if ($get_variations == true) {
+            // Get product variations for each product
+            foreach ($data as $i => $row){
+                $data[$i]["variations"] = [];
+                $variations_query = $this->mysqli->query("SELECT * FROM `product_variations` WHERE `product_id` = ".$row["product_id"]);
+                foreach ($variations_query as $variation) {
+                    array_push($data[$i]["variations"], $variation);
+                }
+            }
+        }
+        return $data;
     }
 }

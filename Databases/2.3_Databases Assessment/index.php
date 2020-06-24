@@ -24,12 +24,31 @@ $frame = new frame();
         <div id="content_list">
             <?php
             // Print all products
-            $data = $frame->get_all_products();
+            $data = $frame->get_all_products(true);
             foreach ($data as $product) {
                 ?>
-                <div class="product" style="background-image: url('assets/images/<?php echo $product["img_location"]; ?>');">
+                <div class="product" style="background-image: url('assets/images/<?php echo $product["variations"][0]["img_location"]; ?>');">
                     <div class="product_content">
                         <h1 class="product_name"><?php echo $product["name"]; ?></h1>
+                        <form>
+                            <?php
+                            if (count($product["variations"]) > 1) {
+                                ?>
+                                <select>
+                                    <?php
+                                    foreach ($product["variations"] as $i => $variation) {
+                                        if ($i == 0) {
+                                            echo "<option selected>".$variation["size"].$variation["colour"]."</option>";
+                                        } else {
+                                            echo "<option>".$variation["size"].$variation["colour"]."</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                                <?php
+                            }
+                            ?>
+                        </form>
                         <button class="get_product">View</button>
                     </div>
                 </div>
