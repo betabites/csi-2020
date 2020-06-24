@@ -18,16 +18,7 @@ class frame {
 
     }
 
-    function get_all_products($mode = "products") {
-        // Mode specified whether to get all products, or all product variations
-
-        // $mode can = "products" or "variations"
-        if ($mode == "products") {
-            return $this->mysqli->query("SELECT * FROM `designers`.`products` JOIN `designers`.`product_variations` ON `designers`.`product_variations`.`product_id` = `designers`.`products`.`product_id` WHERE 1");
-        } elseif ($mode == "variations") {
-            return $this->mysqli->query("SELECT * FROM `designers`.`product_variations` JOIN `designers`.`products` ON `designers`.`products`.`product_id` = `designers`.`product_variations`.`product_id` WHERE 1");
-        } else {
-            return "Invalid parameter(s)";
-        }
+    function get_all_products() {
+        return $this->mysqli->query("SELECT * FROM `designers`.`products` WHERE 1");
     }
 }

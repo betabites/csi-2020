@@ -24,7 +24,7 @@ $frame = new frame();
         <div id="content_list">
             <?php
             // Print all products
-            $data = $frame->get_all_products("variations");
+            $data = $frame->get_all_products();
             foreach ($data as $product) {
                 ?>
                 <div class="product" style="background-image: url('assets/images/<?php echo $product["img_location"]; ?>');">
