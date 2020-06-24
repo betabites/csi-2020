@@ -11,11 +11,30 @@ class frame {
     }
 
     function print_top() {
+        echo "<!DOCTYPE html>
 
+        <html>
+        <head>
+            <title>Kool Kiwiana</title>
+            <link rel=\"stylesheet\" href=\"/assets/css/styles.css\" />
+        </head>
+        <body>
+        <div id=\"header\">
+            <div id=\"header_content\">
+                <div id=\"menu\">
+                    <ul id=\"nav\">
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='/designers'>Designers</a></li>
+                    </ul>
+                </div>
+                <h1>Kool Kiwiana</h1>
+            </div>
+        </div>
+        <div id='content'>";
     }
 
     function print_bottom() {
-
+        echo "</div></body></html>";
     }
 
     function get_all_products($get_variations = false) {
