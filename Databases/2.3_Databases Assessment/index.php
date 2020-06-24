@@ -29,7 +29,8 @@ $frame = new frame();
                 ?>
                 <div class="product" style="background-image: url('assets/images/<?php echo $product["img_location"]; ?>');">
                     <div class="product_content">
-
+                        <h1 class="product_name"><?php echo $product["name"]; ?></h1>
+                        <button class="get_product">View</button>
                     </div>
                 </div>
                 <?php

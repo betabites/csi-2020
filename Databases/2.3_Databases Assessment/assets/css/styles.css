@@ -30,6 +30,8 @@ body {
     color: white;
     position: sticky;
     top: calc(50px - 100vh);
+    box-shadow: 0 5px 10px black;
+    z-index: 2;
 }
 
 #mainpage_header_content {
@@ -50,6 +52,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    padding: 20px;
 }
 
 .product {
@@ -60,13 +63,24 @@ body {
 }
 
 .product_content {
-    height: 100%;
-    width: 100%;
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    text-align: center;
+    color: white;
     background-color: rgba(0, 0, 0, 0.75);
     opacity: 0;
-    transition: opacity 1s;
+    padding: 20px;
+    transition: opacity 0.5s;
 }
 
 .product:hover > .product_content {
     opacity: 1;
+}
+
+.get_product {
+    padding: 15px;
+    min-width: 100px;
+    border: unset;
+    color: white;
+    background-color: lightseagreen;
 }
