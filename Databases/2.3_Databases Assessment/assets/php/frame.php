@@ -38,7 +38,7 @@ class frame {
     }
 
     function get_all_products($get_variations = false) {
-        $data_in = $this->mysqli->query("SELECT * FROM `designers`.`products` WHERE 1");
+        $data_in = $this->mysqli->query("SELECT `products`.*, `designers`.`name` AS `des_name` FROM `products` JOIN `designers` ON `products`.`designer_id` = `designers`.`designer_id` WHERE 1");
 
         // Process data into an array
         $data = [];

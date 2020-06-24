@@ -50,7 +50,7 @@ $frame = new frame();
                             }
                             ?>
                         </form>
-                        <button class="get_product">View</button>
+                        <a class="get_product" href="/products/<?php echo strtolower($product["des_name"]."/".$product["name"]); ?>">View</a>
                     </div>
                 </div>
                 <?php
