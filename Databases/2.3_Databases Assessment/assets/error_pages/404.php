@@ -1,7 +1,9 @@
 <?php
 // Get the frame
-require ("../php/frame.php");
-$frame = new frame();
+if (! isset($frame)) {
+    require (__DIR__."/../php/frame.php");
+    $frame = new frame();
+}
 
 // Print the header
 $frame->print_top();

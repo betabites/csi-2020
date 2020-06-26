@@ -58,4 +58,13 @@ class frame {
         }
         return $data;
     }
+
+    function get_product($name, $des_name) {
+        $query = $this->mysqli->prepare("SELECT * FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`name` = ? AND `designers`.`name` = ?");
+        $query->bind_param("ss", $name, $des_name);
+        $query->execute();
+        $output = $query->get_result();
+        $query->close();
+        return $output;
+    }
 }
