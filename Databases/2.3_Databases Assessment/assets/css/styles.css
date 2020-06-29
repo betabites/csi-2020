@@ -148,6 +148,7 @@ h2 {
     min-height: 60px;
     padding: 0 2px;
     background-color: white;
+    margin: 5px;
 }
 
 .subitem:hover {
