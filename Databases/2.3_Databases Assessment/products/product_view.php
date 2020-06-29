@@ -39,6 +39,7 @@ $variations = $frame->get_product_variations($product["product_id"]);
 
         }
         ?>
+        <h1>2XL</h1>
         <script>
             let variations = <?php echo json_encode($variations_output); ?>;
             let current_variation = 0
