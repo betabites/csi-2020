@@ -31,25 +31,6 @@ $frame = new frame();
                 <div class="product" style="background-image: url('assets/images/<?php echo $product["variations"][0]["img_location"]; ?>');">
                     <div class="product_content">
                         <h1 class="product_name"><?php echo $product["name"]; ?></h1>
-                        <form>
-                            <?php
-                            if (count($product["variations"]) > 1) {
-                                ?>
-                                <select>
-                                    <?php
-                                    foreach ($product["variations"] as $i => $variation) {
-                                        if ($i == 0) {
-                                            echo "<option selected>".$variation["size"].$variation["colour"]."</option>";
-                                        } else {
-                                            echo "<option>".$variation["size"].$variation["colour"]."</option>";
-                                        }
-                                    }
-                                    ?>
-                                </select>
-                                <?php
-                            }
-                            ?>
-                        </form>
                         <a class="get_product" href="/products/<?php echo $product["des_name"]."/".$product["name"]; ?>">View</a>
                     </div>
                 </div>
