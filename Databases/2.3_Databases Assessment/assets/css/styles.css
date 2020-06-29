@@ -144,6 +144,10 @@ h2 {
     box-shadow: 0 0 0 black;
     transition: transform 0.25s, box-shadow 0.25s;
     cursor: pointer;
+    object-fit: contain;
+    min-height: 60px;
+    padding: 0 2px;
+    background-color: white;
 }
 
 .subitem:hover {
