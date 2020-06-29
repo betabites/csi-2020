@@ -67,4 +67,8 @@ class frame {
         $query->close();
         return $output;
     }
+
+    function get_product_variations($product_id) {
+        return $this->mysqli->query("SELECT * FROM `product_variations` WHERE `product_id` = ".$product_id);
+    }
 }

@@ -26,7 +26,7 @@ $frame = new frame();
             <?php
             // Print all products
             $data = $frame->get_all_products(true);
-            foreach ($data as $product) {
+            foreach ($data as $i => $product) {
                 ?>
                 <div class="product" style="background-image: url('assets/images/<?php echo $product["variations"][0]["img_location"]; ?>');">
                     <div class="product_content">
@@ -50,7 +50,7 @@ $frame = new frame();
                             }
                             ?>
                         </form>
-                        <a class="get_product" href="/products/<?php echo strtolower($product["des_name"]."/".$product["name"]); ?>">View</a>
+                        <a class="get_product" href="/products/<?php echo $product["des_name"]."/".$product["name"]; ?>">View</a>
                     </div>
                 </div>
                 <?php
