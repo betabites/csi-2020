@@ -9,6 +9,7 @@ $frame = new frame();
     <head>
         <title>Kool Kiwiana</title>
         <link rel="stylesheet" href="assets/css/styles.css" />
+        <meta name="viewport" content="width=device-width, inital-scale=10">
     </head>
     <body>
         <div id="mainpage_header">
