@@ -156,3 +156,9 @@ h2 {
     transform: scale(1.25);
     box-shadow: 0 5px 10px black !important;
 }
+
+#mainpage_about {
+    margin-top: 200px;
+    color: gray;
+    max-width: 700px;
+}

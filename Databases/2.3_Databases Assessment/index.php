@@ -20,6 +20,10 @@ $frame = new frame();
                     </ul>
                 </div>
                 <h1>Kool Kiwiana</h1>
+                <div id="mainpage_about">
+                    <h1>About <strong>Kool Kiwiana</strong></h1>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet sed sapien non accumsan. Nullam finibus congue turpis et laoreet. Nulla ex sem, rhoncus in libero vitae, pulvinar ullamcorper risus. Donec tincidunt porttitor sapien id sollicitudin. Ut at convallis nulla. Integer vulputate lobortis velit, nec rutrum libero interdum vitae. Ut tincidunt mauris elit, id imperdiet lacus commodo eget. Quisque quis diam tortor.
+                </div>
             </div>
         </div>
         <div id="content_list">
