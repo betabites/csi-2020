@@ -7,7 +7,7 @@ class frame {
         // This function runs whenever the class is first used in a PHP file
 
         // Setup SQL connection
-        $this->mysqli = mysqli_connect("localhost", "root", "", "designers");
+        $this->mysqli = mysqli_connect("fdb21.awardspace.net", "3400555_designers", "Jf3hGnlA50JTe%qo", "3400555_designers");
     }
 
     function print_top() {
@@ -61,12 +61,17 @@ class frame {
     }
 
     function get_product($name, $des_name) {
-        $query = $this->mysqli->prepare("SELECT * FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`name` = ? AND `designers`.`name` = ?");
+        $query = $this->mysqli->prepare("SELECT `products`.*, `designers`.`name` FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`name` = ? AND `designers`.`name` = ?");
         $query->bind_param("ss", $name, $des_name);
         $query->execute();
-        $output = $query->get_result();
+        $output_array = [];
+        $query->bind_result($output_array["product_id"], $output_array["name"], $output_array["about"], $output_array["designer_id"], $output_array["designer_name"]);
+
+        // Get the results
+        $query->fetch();
+
         $query->close();
-        return $output;
+        return $output_array;
     }
 
     function get_product_variations($product_id) {

@@ -2,10 +2,17 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="XAMPP">
     <serverData>
+      <paths name="FREEPARKING">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="XAMPP">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/Databases/2.3_Databases Assessment" web="/" />
+            <mapping deploy="Databases\2.3_Databases Assessment" local="$PROJECT_DIR$/Databases/2.3_Databases Assessment" web="/" />
           </mappings>
         </serverdata>
       </paths>

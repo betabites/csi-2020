@@ -11,9 +11,9 @@ require("../assets/php/frame.php");
 $frame = new frame();
 
 // Get product by designer & name
-$product_query = $frame->get_product($product_name, $designer_name);
+$product = $frame->get_product($product_name, $designer_name);
 
-if ($product_query->num_rows == 0) {
+if (! isset($product["product_id"])) {
     // Could not find product, so return the 404 error
     http_response_code(404);
     require ("../assets/error_pages/404.php");
@@ -21,7 +21,6 @@ if ($product_query->num_rows == 0) {
 }
 
 $frame->print_top();
-$product = $product_query->fetch_assoc();
 $variations = $frame->get_product_variations($product["product_id"]);
 ?>
 <div id="product_data_display">
