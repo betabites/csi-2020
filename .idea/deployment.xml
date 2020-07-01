@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="XAMPP">
     <serverData>
-      <paths name="FREEPARKING">
+      <paths name="AWARDSPACE">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

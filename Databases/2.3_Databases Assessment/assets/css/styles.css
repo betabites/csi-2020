@@ -46,7 +46,7 @@ h2 {
 }
 
 #mainpage_header {
-    background-image: url("/assets/images/yellowkidsbanner.jpg");
+    background-image: url("https://live.staticflickr.com/3390/3231534430_51e484cd37_b.jpg");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -120,7 +120,7 @@ h2 {
 }
 
 #header {
-    background-image: url("/assets/images/yellowkidsbanner.jpg");
+    background-image: url("https://live.staticflickr.com/3390/3231534430_51e484cd37_b.jpg");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -172,5 +172,15 @@ h2 {
 #mainpage_about {
     margin-top: 200px;
     color: gray;
-    max-width: 700px;
+    max-width: 800px;
+}
+
+#group_select {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+#group_select select {
+    padding: 5px;
+    border-radius: 0;
 }
