@@ -43,7 +43,7 @@ $frame = new frame();
                 }
             </script>
         </div>
-        <div id="content_list">
+        <div class="content_list">
             <?php
             // Print all products
             $data = $frame->get_all_products(true);
