@@ -70,7 +70,6 @@ h2 {
 }
 
 .content_list {
-    min-height: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -183,4 +182,12 @@ h2 {
 #group_select select {
     padding: 5px;
     border-radius: 0;
+}
+
+.designer_drop {
+    background: linear-gradient(45deg, lightseagreen, lightgreen);
+    margin-bottom: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'Staatliches', cursive;
 }

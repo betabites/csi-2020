@@ -60,6 +60,11 @@ class frame {
         return $data;
     }
 
+    function get_designers() {
+        // Returns a list of all product variations sorted by designer name, then price
+        return $this->mysqli->query("SELECT `product_variations`.*, `products`.*, `designers`.`name` AS 'des_name'  FROM `product_variations` JOIN `products` ON `products`.`product_id` = `product_variations`.`product_id` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` ORDER BY `designers`.`name` ASC, `product_variations`.`price` ASC");
+    }
+
     function get_product($name, $des_name) {
         $query = $this->mysqli->prepare("SELECT `products`.*, `designers`.`name` FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`name` = ? AND `designers`.`name` = ?");
         $query->bind_param("ss", $name, $des_name);
