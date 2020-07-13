@@ -8,12 +8,24 @@ $frame->print_top();
 $designers_query = $frame->get_designers();
 $last_designer_id = -1;
 ?>
-    <script>
-        let last_designer = -1;
-        function designer_toggle(designer_id) {
-
+<style>
+    .content_list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+</style>
+<script>
+    let last_designer = -1;
+    function designer_toggle(designer_id) {
+        if (last_designer === -1) {
+            document.getElementById("content_list_" + designer_id).style.display = "grid"
+            last_designer = designer_id
+        } else {
+            document.getElementById("content_list_" + last_designer).style.display = ""
+            document.getElementById("content_list_" + designer_id).style.display = "grid"
+            last_designer = designer_id
         }
-    </script>
+    }
+</script>
 <?php
 foreach($designers_query as $i => $product_var) {
     if ($i === 0) {
@@ -26,6 +38,7 @@ foreach($designers_query as $i => $product_var) {
     <div class="product" style="background-image: url('../assets/images/<?php echo $product_var["img_location"]; ?>');">
         <div class="product_content">
             <h1 class="product_name"><?php echo $product_var["name"]; ?></h1>
+            <h2>$<?php echo $product_var["price"];?></h2>
             <a class="get_product" href="/products/<?php echo $product_var["des_name"]."/".$product["name"]; ?>">View</a>
         </div>
     </div>
