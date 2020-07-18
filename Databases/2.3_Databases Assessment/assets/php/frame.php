@@ -7,7 +7,7 @@ class frame {
         // This function runs whenever the class is first used in a PHP file
 
         // Setup SQL connection
-        $this->mysqli = mysqli_connect("fdb21.awardspace.net", "3400555_designers", "Jf3hGnlA50JTe%qo", "3400555_designers");
+        $this->mysqli = mysqli_connect("fdb21.awardspace.net", "3400555_koolkiwiana", "Di3zsx@?5@O,(S*2", "3400555_koolkiwiana");
     }
 
     function print_top() {
@@ -39,7 +39,10 @@ class frame {
     }
 
     function get_all_products($get_variations = false) {
-        $data_in = $this->mysqli->query("SELECT `products`.*, `designers`.`name` AS `des_name` FROM `products` JOIN `designers` ON `products`.`designer_id` = `designers`.`designer_id` WHERE 1");
+        $data_in = $this->mysqli->query("SELECT DISTINCT `products`.*, `designers`.`name` AS `des_name` FROM `products` 
+JOIN `designers` ON `products`.`designer_id` = `designers`.`designer_id`
+JOIN `product_variations` ON `product_variations`.`product_id` = `products`.`product_id`
+WHERE 1 ORDER BY `product_variations`.`price` ASC");
 
         // Process data into an array
         $data = [];
