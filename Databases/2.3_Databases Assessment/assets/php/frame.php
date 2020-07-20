@@ -26,6 +26,7 @@ class frame {
                     <ul id=\"nav\">
                         <li><a href='/'>Home</a></li>
                         <li><a href='/designers'>Designers</a></li>
+                        <li><a href='/categories'>Categories</a></li>
                     </ul>
                 </div>
                 <h1>Kool Kiwiana</h1>
