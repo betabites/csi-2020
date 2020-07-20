@@ -48,7 +48,7 @@ foreach($designers_query as $i => $product_var) {
                     echo "<h2>".$product_var["size"]."</h2>";
                 }
                 ?>
-            <a class="get_product" href="/products/<?php echo $product_var["des_name"]."/".$product_var["name"]; ?>">$<?php echo $product_var["price"];?></a>
+            <a class="get_product" href="/products/<?php echo $product_var["des_name"]."/".$product_var["name"]; ?>">$<?php echo $product_var["price"];?> NZD</a>
         </div>
     </div>
     <?php
