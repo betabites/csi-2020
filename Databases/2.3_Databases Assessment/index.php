@@ -31,17 +31,7 @@ $frame = new frame();
             </div>
         </div>
         <div id="group_select">
-            Group By: <select id="group_selector" onchange="change_group()">
-                <option value="/">None</option>
-                <option value="/designers">Designer</option>
-            </select>
-
-            <script>
-                function change_group() {
-                    // Changes the page when the group is changed
-                    window.location.href = document.getElementById("group_selector").value + "#group_select"
-                }
-            </script>
+            Products are sorted by price (low - high)
         </div>
         <div class="content_list" id="product_content">
             <?php
