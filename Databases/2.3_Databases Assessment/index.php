@@ -42,7 +42,7 @@ $frame = new frame();
                 <div class="product" style="background-image: url('assets/images/<?php echo $product["variations"][0]["img_location"]; ?>');">
                     <div class="product_content">
                         <h1 class="product_name"><?php echo $product["name"]; ?></h1>
-                        <a class="get_product" href="/products/<?php echo $product["des_name"]."/".$product["name"]; ?>">$<?php echo $product["variations"][0]["price"]; ?> NZD</a>
+                        <a class="get_product" href="/products/<?php echo $product["product_id"]; ?>">$<?php echo $product["variations"][0]["price"]; ?> NZD</a>
                     </div>
                 </div>
                 <?php

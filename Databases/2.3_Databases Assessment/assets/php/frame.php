@@ -83,9 +83,9 @@ ORDER BY `categories`.`category_name`, `product_variations`.`price` ASC";
         return $this->mysqli->query($sql);
     }
 
-    function get_product($name, $des_name) {
-        $query = $this->mysqli->prepare("SELECT `products`.*, `designers`.`name` FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`name` = ? AND `designers`.`name` = ?");
-        $query->bind_param("ss", $name, $des_name);
+    function get_product($product_id) {
+        $query = $this->mysqli->prepare("SELECT `products`.*, `designers`.`name` FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`product_id` = ?");
+        $query->bind_param("i", $product_id);
         $query->execute();
         $output_array = [];
         $query->bind_result($output_array["product_id"], $output_array["name"], $output_array["about"], $output_array["designer_id"], $output_array["designer_name"]);

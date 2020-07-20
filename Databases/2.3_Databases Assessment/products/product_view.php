@@ -3,15 +3,14 @@
 
 // Get the name of the product
 $temp = explode("/", str_replace("/products/", "", $_SERVER["REQUEST_URI"]));
-$designer_name = urldecode($temp[0]);
-$product_name = urldecode($temp[1]);
+$product_id = urldecode($temp[0]);
 
 // Get the frame
 require("../assets/php/frame.php");
 $frame = new frame();
 
 // Get product by designer & name
-$product = $frame->get_product($product_name, $designer_name);
+$product = $frame->get_product($product_id);
 
 if (! isset($product["product_id"])) {
     // Could not find product, so return the 404 error
@@ -78,7 +77,7 @@ $variations = $frame->get_product_variations($product["product_id"]);
             ?>
         </div>
         <div>
-            <h1><?php echo $product_name; ?></h1>
+            <h1><?php echo $product["name"]; ?></h1>
             <h2>[Product Variation goes here]</h2>
             <?php echo $product["about"];?>
         </div>
