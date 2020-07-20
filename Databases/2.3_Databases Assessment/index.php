@@ -18,6 +18,7 @@ $frame = new frame();
                     <ul id="nav">
                         <li>Home</li>
                         <li><a href="/designers">Designers</a></li>
+                        <li><a href="/categories">Categories</a></li>
                     </ul>
                 </div>
                 <h1>Kool Kiwiana</h1>

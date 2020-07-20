@@ -69,6 +69,20 @@ WHERE 1 ORDER BY `product_variations`.`price` ASC");
         return $this->mysqli->query("SELECT `product_variations`.*, `products`.*, `designers`.`name` AS 'des_name'  FROM `product_variations` JOIN `products` ON `products`.`product_id` = `product_variations`.`product_id` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` ORDER BY `designers`.`name` ASC, `product_variations`.`price` ASC");
     }
 
+    function get_categories($get_sub_items = false) {
+        if ($get_sub_items) {
+            $sql = "SELECT * FROM `categories`
+JOIN `product_categories_link` ON `product_categories_link`.`category_id` = `categories`.`category_id`
+JOIN `product_variations` ON `product_variations`.`product_id` = `product_categories_link`.`product_id`
+JOIN `products` ON `product_variations`.`product_id` = `products`.`product_id`
+WHERE 1
+ORDER BY `categories`.`category_name`, `product_variations`.`price` ASC";
+        } else {
+            $sql = "SELECT * FROM `categories` WHERE 1";
+        }
+        return $this->mysqli->query($sql);
+    }
+
     function get_product($name, $des_name) {
         $query = $this->mysqli->prepare("SELECT `products`.*, `designers`.`name` FROM `products` JOIN `designers` ON `designers`.`designer_id` = `products`.`designer_id` WHERE `products`.`name` = ? AND `designers`.`name` = ?");
         $query->bind_param("ss", $name, $des_name);
