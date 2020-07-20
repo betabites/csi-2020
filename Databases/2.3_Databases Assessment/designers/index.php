@@ -20,12 +20,13 @@ $last_designer_id = -1;
             document.getElementById("content_list_" + designer_id).style.display = "grid"
             last_designer = designer_id
         } else {
-            document.getElementById("content_list_" + last_designer).style.display = ""
+            document.getElementById("content_list_" + last_designer).style.display = "none"
             document.getElementById("content_list_" + designer_id).style.display = "grid"
             last_designer = designer_id
         }
     }
 </script>
+Products are sorted by: Designer name (a-z), Price (low - high)
 <?php
 foreach($designers_query as $i => $product_var) {
     if ($i === 0) {
@@ -38,8 +39,16 @@ foreach($designers_query as $i => $product_var) {
     <div class="product" style="background-image: url('../assets/images/<?php echo $product_var["img_location"]; ?>');">
         <div class="product_content">
             <h1 class="product_name"><?php echo $product_var["name"]; ?></h1>
-            <h2>$<?php echo $product_var["price"];?></h2>
-            <a class="get_product" href="/products/<?php echo $product_var["des_name"]."/".$product["name"]; ?>">View</a>
+            <?php
+                if ($product_var["colour"] !== NULL and $product_var["size"] !== NULL) {
+                    echo "<h2><div class='circle circle_".strtolower($product_var["colour"])."'></div>".$product_var["colour"]." - ".$product_var["size"]."</h2>";
+                } elseif ($product_var["colour"] !== NULL) {
+                    echo "<h2><div class='circle circle_".strtolower($product_var["colour"])."'></div>".$product_var["colour"]."</h2>";
+                } elseif ($product_var["size"] !== NULL) {
+                    echo "<h2>".$product_var["size"]."</h2>";
+                }
+                ?>
+            <a class="get_product" href="/products/<?php echo $product_var["des_name"]."/".$product_var["name"]; ?>">$<?php echo $product_var["price"];?></a>
         </div>
     </div>
     <?php
