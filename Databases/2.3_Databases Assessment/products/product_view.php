@@ -78,7 +78,6 @@ $variations = $frame->get_product_variations($product["product_id"]);
         </div>
         <div>
             <h1><?php echo $product["name"]; ?></h1>
-            <h2>[Product Variation goes here]</h2>
             <?php echo $product["about"];?>
         </div>
     </div>
