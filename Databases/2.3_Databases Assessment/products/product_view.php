@@ -57,6 +57,7 @@ $variations = $frame->get_product_variations($product["product_id"]);
                         document.getElementById('pro_variation_' + current_variation).style.zIndex = ""
                         document.getElementById('pro_variation_' + variation_id).style.boxShadow = "0 2px 5px black";
                         document.getElementById('pro_variation_' + variation_id).style.zIndex = "2"
+                        document.getElementById('pro_variation_' + variation_id).focus()
                         document.getElementById("variation_name").innerHTML = variations[variation_id]["title"]
                         document.getElementById("price").innerHTML = "$" + variations[variation_id]["price"]
 
