@@ -1,7 +1,7 @@
 <?php
 // This file is used to share functions between PHP pages.
 class frame {
-    private $mysqli;
+    public $mysqli;
 
     function __construct() {
         // This function runs whenever the class is first used in a PHP file
@@ -11,19 +11,27 @@ class frame {
     }
 
     function print_top() {
-        echo "<!DOCTYPE html>
+        ?><!DOCTYPE html>
 
         <html>
         <head>
             <title>Kool Kiwiana</title>
-            <link rel=\"stylesheet\" href=\"/assets/css/styles.css\" />
-            <meta name=\"viewport\" content=\"width=device-width, inital-scale=10\">
+            <link rel="stylesheet" href="/assets/css/styles.css" />
+            <meta name="viewport" content="width=device-width, inital-scale=10">
         </head>
         <body>
-        <div id=\"header\">
-            <div id=\"header_content\">
-                <div id=\"menu\">
-                    <ul id=\"nav\">
+        <div id="header">
+            <div id="header_content">
+                <div id="menu">
+                    <ul id="nav">
+                        <li>
+                            <form action="/search" method="get">
+                                <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
+                                <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;" <?php
+                                if (isset($_GET['criteria'])) echo "value='".$_GET['criteria']."'";
+                                ?>>
+                            </form>
+                        </li>
                         <li><a href='/'>Home</a></li>
                         <li><a href='/designers'>Designers</a></li>
                         <li><a href='/categories'>Categories</a></li>
@@ -32,7 +40,8 @@ class frame {
                 <h1>Kool Kiwiana</h1>
             </div>
         </div>
-        <div id='content'>";
+        <div id='content'>
+        <?php
     }
 
     function print_bottom() {

@@ -16,6 +16,12 @@ $frame = new frame();
             <div id="mainpage_header_content">
                 <div id="menu">
                     <ul id="nav">
+                        <li>
+                            <form action="search" method="get">
+                                <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
+                                <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;">
+                            </form>
+                        </li>
                         <li>Home</li>
                         <li><a href="/designers">Designers</a></li>
                         <li><a href="/categories">Categories</a></li>
@@ -39,7 +45,10 @@ $frame = new frame();
             $data = $frame->get_all_products(true);
             foreach ($data as $i => $product) {
                 ?>
-                <div class="product" style="background-image: url('assets/images/<?php echo $product["variations"][0]["img_location"]; ?>');">
+                <div class="product" style="background-image: url('assets/images/<?php echo $product["variations"][0]["img_location"]."');";
+                if ($product["variations"][0]['image_mode'] === "1") {
+                    echo "background-size:contain;background-repeat:no-repeat;";
+                }?>">
                     <div class="product_content">
                         <h1 class="product_name"><?php echo $product["name"]; ?></h1>
                         <a class="get_product" href="/products/<?php echo $product["product_id"]; ?>">$<?php echo $product["variations"][0]["price"]; ?> NZD</a>

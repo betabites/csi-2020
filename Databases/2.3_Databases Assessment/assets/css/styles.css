@@ -93,6 +93,7 @@ h2 {
     height: 300px;
     background-size: cover;
     background-position: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 
 .product_content {
