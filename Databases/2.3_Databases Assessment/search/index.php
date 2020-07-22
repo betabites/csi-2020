@@ -12,7 +12,7 @@ if ($data->num_rows == 0) {
     echo "<h1>Hmmm...</h1>We couldn't find any products matching your search.";
 } else {
     foreach ($data as $result) {
-        echo "<a href='/products/".$result["product_id"]."'><strong>".$result["name"]."</strong></a><br><p>".$result["about"]."</p><hr>";
+        echo str_replace($_GET['criteria'], "<mark>".$_GET['criteria']."</mark>", "<a href='/products/".$result["product_id"]."'><strong>".$result["name"]."</strong></a><br><p>".$result["about"]."</p><hr>");
     }
 }
 $frame->print_bottom();
