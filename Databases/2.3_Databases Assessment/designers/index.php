@@ -19,6 +19,9 @@ $last_designer_id = -1;
         if (last_designer === -1) {
             document.getElementById("content_list_" + designer_id).style.display = "grid"
             last_designer = designer_id
+        } else if(last_designer === designer_id) {
+            document.getElementById("content_list_" + designer_id).style.display = "none"
+            last_designer = -1
         } else {
             document.getElementById("content_list_" + last_designer).style.display = "none"
             document.getElementById("content_list_" + designer_id).style.display = "grid"

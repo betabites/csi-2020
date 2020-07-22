@@ -19,6 +19,9 @@ $last_category_id = -1;
         if (last_category === -1) {
             document.getElementById("content_list_" + category_id).style.display = "grid"
             last_category = category_id
+        } else if(last_category === category_id) {
+            document.getElementById("content_list_" + category_id).style.display = "none"
+            last_category = -1
         } else {
             document.getElementById("content_list_" + last_category).style.display = "none"
             document.getElementById("content_list_" + category_id).style.display = "grid"
