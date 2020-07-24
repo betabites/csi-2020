@@ -34,10 +34,10 @@ $last_gender = -1;
 foreach($genders_query as $i => $product_var) {
     if ($product_var["gender"] == "M") {$gender = "Male";} elseif ($product_var["gender"] == "W") {$gender = "Women";} elseif ($product_var["gender"] == "U") {$gender = "Unisex";} else {$gender = "No Gender";}
     if ($i === 0) {
-        echo "<div class='designer_drop'>".$gender."<span style='float: right; cursor: pointer;' onclick='category_toggle(\"".$gender."\")'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$gender."'>";
+        echo "<div class='designer_drop' onclick='category_toggle(\"".$gender."\")'>".$gender."<span style='float: right; cursor: pointer;'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$gender."'>";
         $last_gender = $gender;
     } elseif ($gender !== $last_gender) {
-        echo "</div><div class='designer_drop'>".$gender."<span style='float: right; cursor: pointer;' onclick='category_toggle(\"".$gender."\")'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$gender."'>";
+        echo "</div><div class='designer_drop' onclick='category_toggle(\"".$gender."\")'>".$gender."<span style='float: right; cursor: pointer;'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$gender."'>";
         $last_gender = $gender;
     }
     ?>

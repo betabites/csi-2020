@@ -33,10 +33,10 @@ Products are sorted by: Designer name (a-z), Price (low - high)
 <?php
 foreach($designers_query as $i => $product_var) {
     if ($i === 0) {
-        echo "<div class='designer_drop'>".$product_var["des_name"]."<span style='float: right; cursor: pointer;' onclick='designer_toggle(".$product_var["designer_id"].")'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$product_var["designer_id"]."'>";
+        echo "<div class='designer_drop' onclick='designer_toggle(".$product_var["designer_id"].")'>".$product_var["des_name"]."<span style='float: right; cursor: pointer;'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$product_var["designer_id"]."'>";
         $last_designer_id = $product_var["designer_id"];
     } elseif ($product_var["designer_id"] !== $last_designer_id) {
-        echo "</div><div class='designer_drop'>".$product_var["des_name"]."<span style='float: right; cursor: pointer;' onclick='designer_toggle(".$product_var["designer_id"].")'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$product_var["designer_id"]."'>";
+        echo "</div><div class='designer_drop' onclick='designer_toggle(".$product_var["designer_id"].")'>".$product_var["des_name"]."<span style='float: right; cursor: pointer;'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$product_var["designer_id"]."'>";
         $last_designer_id = $product_var["designer_id"];
     }?>
     <div class="product" style="background-image: url('../assets/images/<?php echo $product_var["img_location"]."');";
