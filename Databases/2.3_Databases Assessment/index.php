@@ -25,6 +25,7 @@ $frame = new frame();
                         <li>Home</li>
                         <li><a href="/designers">Designers</a></li>
                         <li><a href="/categories">Categories</a></li>
+                        <li><a href="/genders">Genders</a></li>
                     </ul>
                 </div>
                 <h1>Kool Kiwiana</h1>

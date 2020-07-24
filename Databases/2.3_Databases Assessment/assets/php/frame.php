@@ -35,6 +35,7 @@ class frame {
                         <li><a href='/'>Home</a></li>
                         <li><a href='/designers'>Designers</a></li>
                         <li><a href='/categories'>Categories</a></li>
+                        <li><a href="/genders">Genders</a></li>
                     </ul>
                 </div>
                 <h1>Kool Kiwiana</h1>
@@ -108,5 +109,10 @@ ORDER BY `categories`.`category_name`, `product_variations`.`price` ASC";
 
     function get_product_variations($product_id) {
         return $this->mysqli->query("SELECT * FROM `product_variations` WHERE `product_id` = ".$product_id);
+    }
+
+    function get_by_gender() {
+        // Gets all product variations sorted by gender, then price
+        return $this->mysqli->query("SELECT * FROM `product_variations` JOIN `products` on `product_variations`.`product_id` = `products`.`product_id` WHERE 1 ORDER BY `gender`, `price` ASC");
     }
 }
