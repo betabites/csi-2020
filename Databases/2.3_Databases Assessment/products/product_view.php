@@ -17,6 +17,8 @@ if (! isset($product["product_id"])) {
     http_response_code(404);
     require ("../assets/error_pages/404.php");
     die();
+} else {
+    http_response_code(200);
 }
 
 $frame->print_top();
