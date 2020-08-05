@@ -26,6 +26,8 @@ class frame {
 
                 #header_content {
                     background-color: transparent;
+                    height: 0;
+                    padding: 0;
                 }
 
                 body {
