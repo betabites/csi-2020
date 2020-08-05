@@ -29,8 +29,7 @@ $last_category_id = -1;
         }
     }
 </script>
-Products are sorted by: Category name (a-z), Price (low - high)
-<?php
+    <h1>Categories</h1><?php
 foreach($categories_query as $i => $product_var) {
     if ($i === 0) {
         echo "<div class='designer_drop' onclick='category_toggle(".$product_var["category_id"].")'>".$product_var["category_name"]."<span style='float: right; cursor: pointer;'>Show available products</span></div><div class='content_list' style='padding: 20px 0; display: none;' id='content_list_".$product_var["category_id"]."'>";

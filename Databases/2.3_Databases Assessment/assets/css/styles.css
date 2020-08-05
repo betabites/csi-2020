@@ -16,10 +16,18 @@ h2 {
 }
 
 #menu {
-    float: right;
-    position: sticky;
-    top: 20px;
     font-family: 'Staatliches', cursive;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.75);
+}
+
+#menu > ul {
+    float: right;
+}
+
+#menu > h1 {
+    margin: 0;
+    display: inline;
 }
 
 #nav {
@@ -50,16 +58,14 @@ h2 {
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    position: sticky;
-    top: calc(40px - 100vh);
     box-shadow: 0 5px 10px black;
     z-index: 2;
 }
 
 #mainpage_header_content {
-    height: 100vh;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.75);
+    min-height: 100vh;
 }
 #mainpage_header_content > h1 {
     position: sticky;
@@ -214,3 +220,56 @@ h2 {
 .circle_peach {background-color: peachpuff}
 .circle_aqua {background-color: aqua}
 .circle_gray {background-color: gray}
+
+#menu_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url("https://live.staticflickr.com/3390/3231534430_51e484cd37_b.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 2;
+}
+
+#mainpage_h1 {
+    font-size: 100pt; margin-bottom: 0;
+}
+
+@media only screen and (max-width: 700px) {
+    #search {
+        display: none !important;
+    }
+
+    #mainpage_h1 {
+        font-size: 72pt !important;
+    }
+
+    #menu {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #nav {
+        padding: 10px !important;
+        float: none !important;
+    }
+
+    #nav > li {
+        padding: 10px;
+    }
+
+    .content_list {
+        grid-template-columns: 1fr !important;
+    }
+
+    body {
+        margin-top: 120px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .content_list {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}

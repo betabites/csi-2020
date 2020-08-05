@@ -18,27 +18,41 @@ class frame {
             <title>Kool Kiwiana</title>
             <link rel="stylesheet" href="/assets/css/styles.css" />
             <meta name="viewport" content="width=device-width, inital-scale=10">
+            <style>
+                /* This styling applies to all pages, except the main page */
+                #header {
+                    height: 0;
+                }
+
+                #header_content {
+                    background-color: transparent;
+                }
+
+                body {
+                    margin-top: 80px;
+                }
+            </style>
         </head>
         <body>
         <div id="header">
             <div id="header_content">
-                <div id="menu">
-                    <ul id="nav">
-                        <li>
-                            <form action="/search" method="get">
-                                <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
-                                <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;" <?php
-                                if (isset($_GET['criteria'])) echo "value='".$_GET['criteria']."'";
-                                ?>>
-                            </form>
-                        </li>
-                        <li><a href='/'>Home</a></li>
-                        <li><a href='/designers'>Designers</a></li>
-                        <li><a href='/categories'>Categories</a></li>
-                        <li><a href="/genders">Genders</a></li>
-                    </ul>
+                <div id="menu_wrapper">
+                    <div id="menu">
+                        <h1>Kool Kiwiana</h1>
+                        <ul id="nav">
+                            <li id="search">
+                                <form action="search" method="get">
+                                    <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
+                                    <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;">
+                                </form>
+                            </li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/designers">Designers</a></li>
+                            <li><a href="/categories">Categories</a></li>
+                            <li><a href="/genders">Genders</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <h1>Kool Kiwiana</h1>
             </div>
         </div>
         <div id='content'>

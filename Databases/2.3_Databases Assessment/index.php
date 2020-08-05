@@ -14,23 +14,25 @@ $frame = new frame();
     <body>
         <div id="mainpage_header">
             <div id="mainpage_header_content">
-                <div id="menu">
-                    <ul id="nav">
-                        <li>
-                            <form action="search" method="get">
-                                <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
-                                <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;">
-                            </form>
-                        </li>
-                        <li>Home</li>
-                        <li><a href="/designers">Designers</a></li>
-                        <li><a href="/categories">Categories</a></li>
-                        <li><a href="/genders">Genders</a></li>
-                    </ul>
+                <div id="menu_wrapper">
+                    <div id="menu">
+                        <h1>Kool Kiwiana</h1>
+                        <ul id="nav">
+                            <li id="search">
+                                <form action="search" method="get">
+                                    <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
+                                    <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;">
+                                </form>
+                            </li>
+                            <li>Home</li>
+                            <li><a href="/designers">Designers</a></li>
+                            <li><a href="/categories">Categories</a></li>
+                            <li><a href="/genders">Genders</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <h1>Kool Kiwiana</h1>
                 <div id="mainpage_about">
-                    <h1 style="font-size: 100pt; margin-bottom: 0;">Kool Kiwiana</h1>
+                    <h1 id="mainpage_h1">Kool Kiwiana</h1>
                     <h2 style="margin-top: 0;">Novelty NZ products <span style="color:gray;">Nicky Roundtree</span></h2>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet sed sapien non accumsan. Nullam finibus congue turpis et laoreet. Nulla ex sem, rhoncus in libero vitae, pulvinar ullamcorper risus. Donec tincidunt porttitor sapien id sollicitudin. Ut at convallis nulla. Integer vulputate lobortis velit, nec rutrum libero interdum vitae. Ut tincidunt mauris elit, id imperdiet lacus commodo eget. Quisque quis diam tortor.
 
