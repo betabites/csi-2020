@@ -41,9 +41,9 @@ class frame {
                         <h1>Kool Kiwiana</h1>
                         <ul id="nav">
                             <li id="search">
-                                <form action="search" method="get">
+                                <form action="/search" method="get">
                                     <!-- The 'action' attributes tells the browser to go to /search on the website, and do the query there. -->
-                                    <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;">
+                                    <input type="text" name="criteria" placeholder="Search" style="margin:-5px;padding:5px;" <?php if (isset($_GET['criteria'])) echo 'value="'.str_replace('"', "&quot;", $_GET['criteria']).'"'?>>
                                 </form>
                             </li>
                             <li><a href="/">Home</a></li>
