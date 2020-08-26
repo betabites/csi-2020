@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: fdb21.awardspace.net
--- Generation Time: Aug 19, 2020 at 10:29 PM
+-- Generation Time: Aug 26, 2020 at 10:23 PM
 -- Server version: 5.7.20-log
 -- PHP Version: 5.5.38
 
@@ -189,15 +189,15 @@ CREATE TABLE `product_variations` (
 --
 
 INSERT INTO `product_variations` (`variation_id`, `product_id`, `price`, `colour`, `size`, `img_location`, `gender`, `inventory`, `launch_date`, `image_mode`) VALUES
-(1, 1, 39, 'Yellow', NULL, 'yellowkidsbanner.jpg', NULL, 12, '0000-00-00', 0),
-(2, 2, 39, 'Blue', NULL, 'boldbanner.jpg', NULL, 12, '0000-00-00', 0),
-(3, 3, 39, 'Brown', NULL, 'coffeebanner.jpg', NULL, 12, '0000-00-00', 0),
-(4, 4, 42, 'Blue', NULL, 'mountainpendant.jpg', NULL, 12, '0000-00-00', 0),
-(5, 5, 42, 'Orange', NULL, 'nzpendant.jpg', NULL, 12, '0000-00-00', 0),
-(6, 6, 28, 'Brown', NULL, 'stagring.jpg', NULL, 12, '0000-00-00', 0),
-(7, 7, 29, 'Red', NULL, 'redstuds.png', NULL, 12, '0000-00-00', 0),
-(8, 8, 34, 'Yellow', NULL, 'yellowdiamonds.jpg', NULL, 12, '0000-00-00', 0),
-(9, 9, 28, 'Blue', NULL, 'birdring.jpg', NULL, 12, '0000-00-00', 0),
+(1, 1, 39, 'Yellow', NULL, 'yellowkidsbanner.jpg', '', 12, '0000-00-00', 0),
+(2, 2, 39, 'Blue', NULL, 'boldbanner.jpg', '', 12, '0000-00-00', 0),
+(3, 3, 39, 'Brown', NULL, 'coffeebanner.jpg', '', 12, '0000-00-00', 0),
+(4, 4, 42, 'Blue', NULL, 'mountainpendant.jpg', '', 12, '0000-00-00', 0),
+(5, 5, 42, 'Orange', NULL, 'nzpendant.jpg', '', 12, '0000-00-00', 0),
+(6, 6, 28, 'Brown', NULL, 'stagring.jpg', '', 12, '0000-00-00', 0),
+(7, 7, 29, 'Red', NULL, 'redstuds.png', '', 12, '0000-00-00', 0),
+(8, 8, 34, 'Yellow', NULL, 'yellowdiamonds.jpg', '', 12, '0000-00-00', 0),
+(9, 9, 28, 'Blue', NULL, 'birdring.jpg', '', 12, '0000-00-00', 0),
 (10, 10, 69, 'Black', 'S', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
 (11, 10, 69, 'Black', 'M', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
 (12, 10, 69, 'Black', 'L', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
@@ -210,22 +210,22 @@ INSERT INTO `product_variations` (`variation_id`, `product_id`, `price`, `colour
 (19, 12, 35, 'Black', 'M', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
 (20, 12, 35, 'Black', 'L', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
 (21, 12, 35, 'Black', 'XL', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
-(22, 13, 40, 'Black', 'S', 'bugger_blk_tee_mens.jpg', 'M', 12, '0000-00-00', 0),
-(23, 13, 40, 'Black', 'M', 'bugger_blk_tee_mens.jpg', 'M', 12, '0000-00-00', 0),
-(24, 13, 40, 'Black', 'L', 'bugger_blk_tee_mens.jpg', 'M', 12, '0000-00-00', 0),
-(25, 13, 40, 'Black', 'XL', 'bugger_blk_tee_mens.jpg', 'M', 12, '0000-00-00', 0),
-(26, 14, 40, NULL, 'S', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(27, 14, 40, NULL, 'M', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(28, 14, 40, NULL, 'L', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(29, 14, 40, NULL, 'XL', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(30, 15, 89, NULL, 'S', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(31, 15, 89, NULL, 'M', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(32, 15, 89, NULL, 'L', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(33, 15, 89, NULL, 'XL', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(34, 16, 40, NULL, 'S', 'epss-34.jpg', 'W', 12, '0000-00-00', 0),
-(35, 16, 40, NULL, 'M', 'epss-34.jpg', 'W', 12, '0000-00-00', 0),
-(36, 16, 40, NULL, 'L', 'epss-34.jpg', 'W', 12, '0000-00-00', 0),
-(37, 16, 40, NULL, 'XL', 'epss-34.jpg', 'W', 12, '0000-00-00', 0),
+(22, 13, 40, 'Black', 'S', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
+(23, 13, 40, 'Black', 'M', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
+(24, 13, 40, 'Black', 'L', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
+(25, 13, 40, 'Black', 'XL', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
+(26, 14, 40, '', 'S', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
+(27, 14, 40, '', 'M', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
+(28, 14, 40, '', 'L', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
+(29, 14, 40, '', 'XL', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
+(30, 15, 89, '', 'S', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
+(31, 15, 89, '', 'M', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
+(32, 15, 89, '', 'L', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
+(33, 15, 89, '', 'XL', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
+(34, 16, 40, '', 'S', 'epss-34.jpg', 'W', 12, '0000-00-00', 0),
+(35, 16, 40, '', 'M', 'epss-35.jpg', 'W', 12, '0000-00-00', 0),
+(36, 16, 40, '', 'L', 'epss-36.jpg', 'W', 12, '0000-00-00', 0),
+(37, 16, 40, '', 'XL', 'epss-37.jpg', 'W', 12, '0000-00-00', 0),
 (38, 17, 39, 'Blue', NULL, 'bluesunnies.jpg', 'U', 12, '0000-00-00', 1),
 (39, 17, 39, 'Green', NULL, 'greensunnies.jpg', 'U', 12, '0000-00-00', 1),
 (40, 17, 39, 'Red', NULL, 'redsunnies.jpg', 'U', 12, '0000-00-00', 1),
