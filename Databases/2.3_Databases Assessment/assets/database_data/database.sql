@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: fdb21.awardspace.net
--- Generation Time: Aug 26, 2020 at 09:54 PM
+-- Generation Time: Aug 26, 2020 at 10:23 PM
 -- Server version: 5.7.20-log
 -- PHP Version: 5.5.38
 
@@ -189,15 +189,15 @@ CREATE TABLE `product_variations` (
 --
 
 INSERT INTO `product_variations` (`variation_id`, `product_id`, `price`, `colour`, `size`, `img_location`, `gender`, `inventory`, `launch_date`, `image_mode`) VALUES
-(1, 1, 39, 'Yellow', '', 'yellowkidsbanner.jpg', '', 12, '0000-00-00', 0),
-(2, 2, 39, 'Blue', '', 'boldbanner.jpg', '', 12, '0000-00-00', 0),
-(3, 3, 39, 'Brown', '', 'coffeebanner.jpg', '', 12, '0000-00-00', 0),
-(4, 4, 42, 'Blue', '', 'mountainpendant.jpg', '', 12, '0000-00-00', 0),
-(5, 5, 42, 'Orange', '', 'nzpendant.jpg', '', 12, '0000-00-00', 0),
-(6, 6, 28, 'Brown', '', 'stagring.jpg', '', 12, '0000-00-00', 0),
-(7, 7, 29, 'Red', '', 'redstuds.png', '', 12, '0000-00-00', 0),
-(8, 8, 34, 'Yellow', '', 'yellowdiamonds.jpg', '', 12, '0000-00-00', 0),
-(9, 9, 28, 'Blue', '', 'birdring.jpg', '', 12, '0000-00-00', 0),
+(1, 1, 39, 'Yellow', NULL, 'yellowkidsbanner.jpg', '', 12, '0000-00-00', 0),
+(2, 2, 39, 'Blue', NULL, 'boldbanner.jpg', '', 12, '0000-00-00', 0),
+(3, 3, 39, 'Brown', NULL, 'coffeebanner.jpg', '', 12, '0000-00-00', 0),
+(4, 4, 42, 'Blue', NULL, 'mountainpendant.jpg', '', 12, '0000-00-00', 0),
+(5, 5, 42, 'Orange', NULL, 'nzpendant.jpg', '', 12, '0000-00-00', 0),
+(6, 6, 28, 'Brown', NULL, 'stagring.jpg', '', 12, '0000-00-00', 0),
+(7, 7, 29, 'Red', NULL, 'redstuds.png', '', 12, '0000-00-00', 0),
+(8, 8, 34, 'Yellow', NULL, 'yellowdiamonds.jpg', '', 12, '0000-00-00', 0),
+(9, 9, 28, 'Blue', NULL, 'birdring.jpg', '', 12, '0000-00-00', 0),
 (10, 10, 69, 'Black', 'S', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
 (11, 10, 69, 'Black', 'M', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
 (12, 10, 69, 'Black', 'L', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
@@ -226,12 +226,12 @@ INSERT INTO `product_variations` (`variation_id`, `product_id`, `price`, `colour
 (35, 16, 40, '', 'M', 'epss-35.jpg', 'W', 12, '0000-00-00', 0),
 (36, 16, 40, '', 'L', 'epss-36.jpg', 'W', 12, '0000-00-00', 0),
 (37, 16, 40, '', 'XL', 'epss-37.jpg', 'W', 12, '0000-00-00', 0),
-(38, 17, 39, 'Blue', '', 'bluesunnies.jpg', 'U', 12, '0000-00-00', 1),
-(39, 17, 39, 'Green', '', 'greensunnies.jpg', 'U', 12, '0000-00-00', 1),
-(40, 17, 39, 'Red', '', 'redsunnies.jpg', 'U', 12, '0000-00-00', 1),
-(41, 18, 59, 'Yellow', '', 'yellowpaddle.jpg', 'U', 12, '0000-00-00', 1),
-(42, 18, 59, 'Blue', '', 'bluepaddle.jpg', 'U', 12, '0000-00-00', 1),
-(43, 18, 59, 'Green', '', 'greenpaddle.jpg', 'U', 12, '0000-00-00', 1);
+(38, 17, 39, 'Blue', NULL, 'bluesunnies.jpg', 'U', 12, '0000-00-00', 1),
+(39, 17, 39, 'Green', NULL, 'greensunnies.jpg', 'U', 12, '0000-00-00', 1),
+(40, 17, 39, 'Red', NULL, 'redsunnies.jpg', 'U', 12, '0000-00-00', 1),
+(41, 18, 59, 'Yellow', NULL, 'yellowpaddle.jpg', 'U', 12, '0000-00-00', 1),
+(42, 18, 59, 'Blue', NULL, 'bluepaddle.jpg', 'U', 12, '0000-00-00', 1),
+(43, 18, 59, 'Green', NULL, 'greenpaddle.jpg', 'U', 12, '0000-00-00', 1);
 
 --
 -- Indexes for dumped tables
