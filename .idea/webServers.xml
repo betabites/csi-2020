@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4b6f60f9-ca41-47ef-9ea2-df93cf724de2" name="XAMPP" url="http://localhost">
+        <fileTransfer mountedRoot="C:\xampp\htdocs" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="19237d87-a789-401b-b8e2-b8c576cebab2" name="AWARDSPACE" url="http://7jhawinkels.atwebpages.com">
+        <fileTransfer rootFolder="/7jhawinkels.atwebpages.com" host="7jhawinkels.atwebpages.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
