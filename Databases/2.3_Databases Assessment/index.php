@@ -7,9 +7,13 @@ $frame = new frame();
 
 <html>
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, inital-scale=10">
+        <meta name="author" content ="Jack Hawinkels" />
+        <meta name="description" content ="Hello and welcome to Kool Kiwiana! The best website for all of your New Zealand novelties!" />
+        <meta name="copyright" content ="&copy: 2020 Jack Hawinkels" />
         <title>Kool Kiwiana</title>
         <link rel="stylesheet" href="assets/css/styles.css" />
-        <meta name="viewport" content="width=device-width, inital-scale=10">
     </head>
     <body>
         <div id="mainpage_header">
@@ -33,8 +37,8 @@ $frame = new frame();
                 </div>
                 <div id="mainpage_about">
                     <h1 id="mainpage_h1">Kool Kiwiana</h1>
-                    <h2 style="margin-top: 0;">Novelty NZ products <span style="color:gray;">Nicky Roundtree</span></h2>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet sed sapien non accumsan. Nullam finibus congue turpis et laoreet. Nulla ex sem, rhoncus in libero vitae, pulvinar ullamcorper risus. Donec tincidunt porttitor sapien id sollicitudin. Ut at convallis nulla. Integer vulputate lobortis velit, nec rutrum libero interdum vitae. Ut tincidunt mauris elit, id imperdiet lacus commodo eget. Quisque quis diam tortor.
+                    <h2 style="margin-top: 0;">Nicky Roundtree <span style="color:gray;">Novelty NZ Products</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet sed sapien non accumsan. Nullam finibus congue turpis et laoreet. Nulla ex sem, rhoncus in libero vitae, pulvinar ullamcorper risus. Donec tincidunt porttitor sapien id sollicitudin. Ut at convallis nulla. Integer vulputate lobortis velit, nec rutrum libero interdum vitae. Ut tincidunt mauris elit, id imperdiet lacus commodo eget. Quisque quis diam tortor.</p>
 
                     <p style="font-size: 0.9rem;font-style: italic;"><a href="https://www.flickr.com/photos/32052617@N03/3231534430">"Image"</a><span> by <a href="https://www.flickr.com/photos/32052617@N03">JacksonPF</a></span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-SA 2.0</a><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-sa_icon.svg" /></a></p>                </div>
                 </div>
@@ -61,5 +65,6 @@ $frame = new frame();
             }
             ?>
         </div>
+        <div id="copyright">&copy; Copyright 2020 - Jack Hawinkels - Tawa College - All Rights Reserved</div>
     </body>
 </html>
