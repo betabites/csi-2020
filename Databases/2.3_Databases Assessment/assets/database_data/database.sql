@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: fdb21.awardspace.net
--- Generation Time: Aug 26, 2020 at 10:23 PM
+-- Generation Time: Oct 28, 2020 at 08:15 PM
 -- Server version: 5.7.20-log
 -- PHP Version: 5.5.38
 
@@ -36,11 +36,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `category_name`) VALUES
-(1, 'Jewlry'),
 (2, 'Clothing'),
-(3, 'Sports Gear'),
 (4, 'Decor'),
-(5, 'Miscellanious');
+(1, 'Jewlry'),
+(5, 'Miscellanious'),
+(3, 'Sports Gear');
 
 -- --------------------------------------------------------
 
@@ -172,14 +172,14 @@ INSERT INTO `product_categories_link` (`product_id`, `category_id`) VALUES
 --
 
 CREATE TABLE `product_variations` (
-  `variation_id` int(2) NOT NULL,
-  `product_id` int(2) DEFAULT NULL,
-  `price` int(2) DEFAULT NULL,
+  `variation_id` tinyint(2) NOT NULL,
+  `product_id` tinyint(2) DEFAULT NULL,
+  `price` int(2) NOT NULL,
   `colour` varchar(6) DEFAULT NULL,
-  `size` varchar(58) DEFAULT NULL,
+  `size` varchar(2) DEFAULT NULL,
   `img_location` varchar(38) DEFAULT NULL,
-  `gender` varchar(1) DEFAULT NULL,
-  `inventory` int(2) DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  `inventory` char(2) DEFAULT NULL,
   `launch_date` date DEFAULT NULL,
   `image_mode` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -189,49 +189,49 @@ CREATE TABLE `product_variations` (
 --
 
 INSERT INTO `product_variations` (`variation_id`, `product_id`, `price`, `colour`, `size`, `img_location`, `gender`, `inventory`, `launch_date`, `image_mode`) VALUES
-(1, 1, 39, 'Yellow', NULL, 'yellowkidsbanner.jpg', '', 12, '0000-00-00', 0),
-(2, 2, 39, 'Blue', NULL, 'boldbanner.jpg', '', 12, '0000-00-00', 0),
-(3, 3, 39, 'Brown', NULL, 'coffeebanner.jpg', '', 12, '0000-00-00', 0),
-(4, 4, 42, 'Blue', NULL, 'mountainpendant.jpg', '', 12, '0000-00-00', 0),
-(5, 5, 42, 'Orange', NULL, 'nzpendant.jpg', '', 12, '0000-00-00', 0),
-(6, 6, 28, 'Brown', NULL, 'stagring.jpg', '', 12, '0000-00-00', 0),
-(7, 7, 29, 'Red', NULL, 'redstuds.png', '', 12, '0000-00-00', 0),
-(8, 8, 34, 'Yellow', NULL, 'yellowdiamonds.jpg', '', 12, '0000-00-00', 0),
-(9, 9, 28, 'Blue', NULL, 'birdring.jpg', '', 12, '0000-00-00', 0),
-(10, 10, 69, 'Black', 'S', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
-(11, 10, 69, 'Black', 'M', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
-(12, 10, 69, 'Black', 'L', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
-(13, 10, 69, 'Black', 'XL', 'para-athletic_blk_hood_unisex-back.jpg', 'U', 12, '0000-00-00', 0),
-(14, 11, 35, 'Black', 'S', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', 12, '0000-00-00', 0),
-(15, 11, 35, 'Black', 'M', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', 12, '0000-00-00', 0),
-(16, 11, 35, 'Black', 'L', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', 12, '0000-00-00', 0),
-(17, 11, 35, 'Black', 'XL', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', 12, '0000-00-00', 0),
-(18, 12, 35, 'Black', 'S', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
-(19, 12, 35, 'Black', 'M', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
-(20, 12, 35, 'Black', 'L', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
-(21, 12, 35, 'Black', 'XL', 'para-athletic_blk_singlet_mens.jpg', 'M', 12, '0000-00-00', 0),
-(22, 13, 40, 'Black', 'S', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
-(23, 13, 40, 'Black', 'M', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
-(24, 13, 40, 'Black', 'L', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
-(25, 13, 40, 'Black', 'XL', 'bugger_blk_tee_mens.jpg', '', 12, '0000-00-00', 0),
-(26, 14, 40, '', 'S', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(27, 14, 40, '', 'M', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(28, 14, 40, '', 'L', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(29, 14, 40, '', 'XL', 'burgerqueen_water_tee_womens-main.jpg', 'W', 12, '0000-00-00', 0),
-(30, 15, 89, '', 'S', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(31, 15, 89, '', 'M', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(32, 15, 89, '', 'L', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(33, 15, 89, '', 'XL', 'lh-tuilove_ash_hood_womens.jpg', 'U', 12, '0000-00-00', 0),
-(34, 16, 40, '', 'S', 'epss-34.jpg', 'W', 12, '0000-00-00', 0),
-(35, 16, 40, '', 'M', 'epss-35.jpg', 'W', 12, '0000-00-00', 0),
-(36, 16, 40, '', 'L', 'epss-36.jpg', 'W', 12, '0000-00-00', 0),
-(37, 16, 40, '', 'XL', 'epss-37.jpg', 'W', 12, '0000-00-00', 0),
-(38, 17, 39, 'Blue', NULL, 'bluesunnies.jpg', 'U', 12, '0000-00-00', 1),
-(39, 17, 39, 'Green', NULL, 'greensunnies.jpg', 'U', 12, '0000-00-00', 1),
-(40, 17, 39, 'Red', NULL, 'redsunnies.jpg', 'U', 12, '0000-00-00', 1),
-(41, 18, 59, 'Yellow', NULL, 'yellowpaddle.jpg', 'U', 12, '0000-00-00', 1),
-(42, 18, 59, 'Blue', NULL, 'bluepaddle.jpg', 'U', 12, '0000-00-00', 1),
-(43, 18, 59, 'Green', NULL, 'greenpaddle.jpg', 'U', 12, '0000-00-00', 1);
+(1, 1, 39, 'Yellow', NULL, 'yellowkidsbanner.jpg', '', '12', '0000-00-00', 0),
+(2, 2, 39, 'Blue', NULL, 'boldbanner.jpg', '', '12', '0000-00-00', 0),
+(3, 3, 39, 'Brown', NULL, 'coffeebanner.jpg', '', '12', '0000-00-00', 0),
+(4, 4, 42, 'Blue', NULL, 'mountainpendant.jpg', '', '12', '0000-00-00', 0),
+(5, 5, 42, 'Orange', NULL, 'nzpendant.jpg', '', '12', '0000-00-00', 0),
+(6, 6, 28, 'Brown', NULL, 'stagring.jpg', '', '12', '0000-00-00', 0),
+(7, 7, 29, 'Red', NULL, 'redstuds.png', '', '12', '0000-00-00', 0),
+(8, 8, 34, 'Yellow', NULL, 'yellowdiamonds.jpg', '', '12', '0000-00-00', 0),
+(9, 9, 28, 'Blue', NULL, 'birdring.jpg', '', '12', '0000-00-00', 0),
+(10, 10, 69, 'Black', 'S', 'para-athletic_blk_hood_unisex-back.jpg', 'U', '12', '0000-00-00', 0),
+(11, 10, 69, 'Black', 'M', 'para-athletic_blk_hood_unisex-back.jpg', 'U', '12', '0000-00-00', 0),
+(12, 10, 69, 'Black', 'L', 'para-athletic_blk_hood_unisex-back.jpg', 'U', '12', '0000-00-00', 0),
+(13, 10, 69, 'Black', 'XL', 'para-athletic_blk_hood_unisex-back.jpg', 'U', '12', '0000-00-00', 0),
+(14, 11, 35, 'Black', 'S', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', '12', '0000-00-00', 0),
+(15, 11, 35, 'Black', 'M', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', '12', '0000-00-00', 0),
+(16, 11, 35, 'Black', 'L', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', '12', '0000-00-00', 0),
+(17, 11, 35, 'Black', 'XL', 'nzot-goldie_blk_singlet_mens-back.jpg', 'M', '12', '0000-00-00', 0),
+(18, 12, 35, 'Black', 'S', 'para-athletic_blk_singlet_mens.jpg', 'M', '12', '0000-00-00', 0),
+(19, 12, 35, 'Black', 'M', 'para-athletic_blk_singlet_mens.jpg', 'M', '12', '0000-00-00', 0),
+(20, 12, 35, 'Black', 'L', 'para-athletic_blk_singlet_mens.jpg', 'M', '12', '0000-00-00', 0),
+(21, 12, 35, 'Black', 'XL', 'para-athletic_blk_singlet_mens.jpg', 'M', '12', '0000-00-00', 0),
+(22, 13, 40, 'Black', 'S', 'bugger_blk_tee_mens.jpg', '', '12', '0000-00-00', 0),
+(23, 13, 40, 'Black', 'M', 'bugger_blk_tee_mens.jpg', '', '12', '0000-00-00', 0),
+(24, 13, 40, 'Black', 'L', 'bugger_blk_tee_mens.jpg', '', '12', '0000-00-00', 0),
+(25, 13, 40, 'Black', 'XL', 'bugger_blk_tee_mens.jpg', '', '12', '0000-00-00', 0),
+(26, 14, 40, '', 'S', 'burgerqueen_water_tee_womens-main.jpg', 'W', '12', '0000-00-00', 0),
+(27, 14, 40, '', 'M', 'burgerqueen_water_tee_womens-main.jpg', 'W', '12', '0000-00-00', 0),
+(28, 14, 40, '', 'L', 'burgerqueen_water_tee_womens-main.jpg', 'W', '12', '0000-00-00', 0),
+(29, 14, 40, '', 'XL', 'burgerqueen_water_tee_womens-main.jpg', 'W', '12', '0000-00-00', 0),
+(30, 15, 89, '', 'S', 'lh-tuilove_ash_hood_womens.jpg', 'U', '12', '0000-00-00', 0),
+(31, 15, 89, '', 'M', 'lh-tuilove_ash_hood_womens.jpg', 'U', '12', '0000-00-00', 0),
+(32, 15, 89, '', 'L', 'lh-tuilove_ash_hood_womens.jpg', 'U', '12', '0000-00-00', 0),
+(33, 15, 89, '', 'XL', 'lh-tuilove_ash_hood_womens.jpg', 'U', '12', '0000-00-00', 0),
+(34, 16, 40, '', 'S', 'epss-34.jpg', 'W', '12', '0000-00-00', 0),
+(35, 16, 40, '', 'M', 'epss-35.jpg', 'W', '12', '0000-00-00', 0),
+(36, 16, 40, '', 'L', 'epss-36.jpg', 'W', '12', '0000-00-00', 0),
+(37, 16, 40, '', 'XL', 'epss-37.jpg', 'W', '12', '0000-00-00', 0),
+(38, 17, 39, 'Blue', NULL, 'bluesunnies.jpg', 'U', '12', '0000-00-00', 1),
+(39, 17, 39, 'Green', NULL, 'greensunnies.jpg', 'U', '12', '0000-00-00', 1),
+(40, 17, 39, 'Red', NULL, 'redsunnies.jpg', 'U', '12', '0000-00-00', 1),
+(41, 18, 59, 'Yellow', NULL, 'yellowpaddle.jpg', 'U', '12', '0000-00-00', 1),
+(42, 18, 59, 'Blue', NULL, 'bluepaddle.jpg', 'U', '12', '0000-00-00', 1),
+(43, 18, 59, 'Green', NULL, 'greenpaddle.jpg', 'U', '12', '0000-00-00', 1);
 
 --
 -- Indexes for dumped tables
@@ -241,7 +241,8 @@ INSERT INTO `product_variations` (`variation_id`, `product_id`, `price`, `colour
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`category_id`);
+  ADD PRIMARY KEY (`category_id`),
+  ADD UNIQUE KEY `category_name` (`category_name`);
 
 --
 -- Indexes for table `designers`
@@ -253,7 +254,8 @@ ALTER TABLE `designers`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `designer_id` (`designer_id`);
 
 --
 -- Indexes for table `product_categories_link`
@@ -266,7 +268,8 @@ ALTER TABLE `product_categories_link`
 -- Indexes for table `product_variations`
 --
 ALTER TABLE `product_variations`
-  ADD PRIMARY KEY (`variation_id`);
+  ADD PRIMARY KEY (`variation_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -287,6 +290,29 @@ ALTER TABLE `designers`
 --
 ALTER TABLE `products`
   MODIFY `product_id` tinyint(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`designer_id`) REFERENCES `designers` (`designer_id`);
+
+--
+-- Constraints for table `product_categories_link`
+--
+ALTER TABLE `product_categories_link`
+  ADD CONSTRAINT `product_categories_link_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
+  ADD CONSTRAINT `product_categories_link_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
+
+--
+-- Constraints for table `product_variations`
+--
+ALTER TABLE `product_variations`
+  ADD CONSTRAINT `product_variations_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
