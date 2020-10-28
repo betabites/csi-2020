@@ -2,6 +2,13 @@
 // This file is used to share functions between PHP pages.
 class frame {
     public $mysqli;
+    /* $meta holds the meta data that will be handed to the browser. The page may decide to altar the meta data. */
+    public $meta = '<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, inital-scale=10" />
+<meta name="author" content ="Jack Hawinkels" />
+<meta name="description" content ="Hello and welcome to Kool Kiwiana! The best website for all of your New Zealand novelties!" />
+<meta name="copyright" content ="&copy: 2020 Jack Hawinkels" />
+';
 
     function __construct() {
         // This function runs whenever the class is first used in a PHP file
@@ -17,7 +24,7 @@ class frame {
         <head>
             <title>Kool Kiwiana</title>
             <link rel="stylesheet" href="/assets/css/styles.css" />
-            <meta name="viewport" content="width=device-width, inital-scale=10">
+            <?php echo $this->meta; ?>
             <style>
                 /* This styling applies to all pages, except the main page */
                 #header {
@@ -62,7 +69,7 @@ class frame {
     }
 
     function print_bottom() {
-        echo "</div></body></html>";
+        echo "</div><div id='copyright'>&copy; Copyright 2020 - Jack Hawinkels - Tawa College - All Rights Reserved</div></body></html>";
     }
 
     function get_all_products($get_variations = false) {
