@@ -4,6 +4,8 @@
 // Get the name of the product
 $temp = explode("/", str_replace("/products/", "", $_SERVER["REQUEST_URI"]));
 $product_id = urldecode($temp[0]);
+$variation_id = urldecode($temp[1]);
+echo "";
 
 // Get the frame
 require("../assets/php/frame.php");
@@ -41,17 +43,22 @@ $variations = $frame->get_product_variations($product["product_id"]);
                     }
                     array_push($variations_output, $variation);
 
-                    if ($i == 0) {
+                    if (($variation_id == "" and $i == 0) or (intval($variation_id) == $variation["variation_id"])) {
                         echo "<img src='/../assets/images/".$variation["img_location"]."' style='width:100%;' id='primary_image' /><br><br><strong>Variations:</strong><br>";
+                        $variation_pos = $i;
+                    }
+                }
+
+                foreach ($variations_output as $i => $variation) {
+                    if ($variation_pos == $i) {
                         echo "<img src='/../assets/images/".$variation["img_location"]."' class='subitem' id='pro_variation_".$i."' onclick='change_variation(".$i.")' style='box-shadow: 0 2px 5px black; z-index: 2' title='".$variation["title"]."' alt='".$variation["title"]."'>";
                     } else {
                         echo "<img src='/../assets/images/".$variation["img_location"]."' class='subitem' id='pro_variation_".$i."' onclick='change_variation(".$i.")' title='".$variation["title"]."' alt='".$variation["title"]."'>";
                     }
-
                 }
                 ?><script>
                     let variations = <?php echo json_encode($variations_output); ?>;
-                    let current_variation = 0
+                    let current_variation = <?php echo $variation_pos; ?>
 
                     function change_variation(variation_id) {
                         document.getElementById('primary_image').src = "/../assets/images/" + variations[variation_id]["img_location"];
