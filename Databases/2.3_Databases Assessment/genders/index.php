@@ -56,7 +56,7 @@ foreach($genders_query as $i => $product_var) {
                 echo "<h2>".$product_var["size"]."</h2>";
             }
             ?>
-            <a class="get_product" href="/products/<?php echo $product_var["product_id"]; ?>">$<?php echo $product_var["price"];?> NZD</a>
+            <a class="get_product" href="/products/<?php echo $product_var["product_id"]."/".$product_var["variation_id"]; ?>">$<?php echo $product_var["price"];?> NZD</a>
         </div>
     </div>
     <?php
